@@ -129,6 +129,17 @@ clean_openfoam() {
     )
 }
 
+clean_openradioss() {
+    (
+        set -e -u
+        cd "$1"
+        echo "- Cleaning up OpenRadioss case in $(pwd)"
+        rm -fv *openradiossA* *openradiossT* *.out *.rst *.vtk
+        clean_precice_logs .
+        clean_case_logs .
+    )
+}
+
 clean_su2() {
     (
         set -e -u
