@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<precice-configuration>
+  <log>
+    <sink
+      filter="%Severity% > debug and %Rank% = 0"
+      format="---[precice] %ColorizedSeverity% %Message%"
+      enabled="true" />
+  </log>
+
+  <data:vector name="FORCES" />
+  <data:vector name="DISPLACEMENTS" />
+
+  <mesh name="OpenRadioss-Mesh1" dimensions="3">
+    <use-data name="FORCES" />
+    <use-data name="DISPLACEMENTS" />
+  </mesh>
+
+  <mesh name="OpenRadioss-Mesh2" dimensions="3">
+    <use-data name="DISPLACEMENTS" />
+    <use-data name="FORCES" />
+  </mesh>
+
+  <participant name="s1">
+    <provide-mesh name="OpenRadioss-Mesh1" />
+    <receive-mesh name="OpenRadioss-Mesh2" from="s2" />
+    <write-data name="FORCES" mesh="OpenRadioss-Mesh1" />
+    <read-data name="DISPLACEMENTS" mesh="OpenRadioss-Mesh1" />
+    <mapping:nearest-neighbor
+      direction="write"
+      from="OpenRadioss-Mesh1"
+      to="OpenRadioss-Mesh2"
+      constraint="conservative" />
+    <mapping:nearest-neighbor
+      direction="read"
+      from="OpenRadioss-Mesh2"
+      to="OpenRadioss-Mesh1"
+      constraint="consistent" />
+    <export:vtu directory="precice-exports" every-n-time-windows = "100"/>
+  </participant>
+
+  <participant name="s2">
+    <export:vtu directory="precice-exports" every-n-time-windows = "100"/>
+    <provide-mesh name="OpenRadioss-Mesh2" />
+    <write-data name="DISPLACEMENTS" mesh="OpenRadioss-Mesh2" />
+    <read-data name="FORCES" mesh="OpenRadioss-Mesh2" />
+  </participant>
+
+  <m2n:sockets acceptor="s1" connector="s2" exchange-directory="../" />
+
+  <coupling-scheme:parallel-explicit>
+    <participants first="s1" second="s2" />
+    <max-time-windows value="300" />
+    <time-window-size value="1e-2" />
+    <exchange data="DISPLACEMENTS" mesh="OpenRadioss-Mesh2" from="s2" to="s1" />
+    <exchange data="FORCES" mesh="OpenRadioss-Mesh2" from="s1" to="s2" />
+  </coupling-scheme:parallel-explicit>
+</precice-configuration>
