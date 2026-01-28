@@ -5,10 +5,10 @@ export RAD_CFG_PATH=$OPENRADIOSS_PATH/hm_cfg_files
 export OMP_STACKSIZE=400m
 export LD_LIBRARY_PATH=$OPENRADIOSS_PATH/extlib/hm_reader/linux64/:$OPENRADIOSS_PATH/extlib/h3d/lib/linux64/:$LD_LIBRARY_PATH
 
-alias starter='$OPENRADIOSS_PATH/starter/cbuild_starter_linux64_gf/starter_linux64_gf'
-alias engine='$OPENRADIOSS_PATH/engine/cbuild_engine_linux64_gf_ompi_precice/engine_linux64_gf_ompi_precice'
-alias radiossVTK='$OPENRADIOSS_PATH/exec/anim_to_vtk_linux64_gf'
-alias radiossCSV='$OPENRADIOSS_PATH/exec/th_to_csv_linux64_gf'
+export starter=$OPENRADIOSS_PATH/starter/cbuild_starter_linux64_gf/starter_linux64_gf
+export engine=$OPENRADIOSS_PATH/engine/cbuild_engine_linux64_gf_ompi_precice/engine_linux64_gf_ompi_precice
+export radiossVTK=$OPENRADIOSS_PATH/exec/anim_to_vtk_linux64_gf
+export radiossCSV=$OPENRADIOSS_PATH/exec/th_to_csv_linux64_gf
 
 # Run `toVTK modelA` to convert all animation files modelAA* to VTK format
 toVTK() {
