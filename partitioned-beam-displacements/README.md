@@ -8,4 +8,4 @@ This is a uni-directional coupling, in which the left (loaded) participant sends
 
 The simulation completes, and the results are as follows:
 
-(TODO: Insert some helpful image for orientation. For example, the displacements surface plot.)
+![results](images/partitioned-beam-displacements-results.png)
