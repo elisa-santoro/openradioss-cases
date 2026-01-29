@@ -7,51 +7,51 @@
       enabled="true" />
   </log>
 
-  <data:vector name="FORCES" />
+  <!-- <data:vector name="FORCES" /> -->
   <data:vector name="DISPLACEMENTS" />
 
-  <mesh name="OpenRadioss-Mesh1" dimensions="3">
-    <use-data name="FORCES" />
+  <mesh name="Beam-Right-Mesh" dimensions="3">
+    <!-- <use-data name="FORCES" /> -->
     <use-data name="DISPLACEMENTS" />
   </mesh>
 
-  <mesh name="OpenRadioss-Mesh2" dimensions="3">
+  <mesh name="Beam-Left-Mesh" dimensions="3">
     <use-data name="DISPLACEMENTS" />
-    <use-data name="FORCES" />
+    <!-- <use-data name="FORCES" /> -->
   </mesh>
 
-  <participant name="s1">
-    <provide-mesh name="OpenRadioss-Mesh1" />
-    <receive-mesh name="OpenRadioss-Mesh2" from="s2" />
-    <write-data name="FORCES" mesh="OpenRadioss-Mesh1" />
-    <read-data name="DISPLACEMENTS" mesh="OpenRadioss-Mesh1" />
-    <mapping:nearest-neighbor
-      direction="write"
-      from="OpenRadioss-Mesh1"
-      to="OpenRadioss-Mesh2"
-      constraint="conservative" />
+  <participant name="Beam-Left">
+    <provide-mesh name="Beam-Left-Mesh" />
+    <write-data name="DISPLACEMENTS" mesh="Beam-Left-Mesh" />
+    <!-- <read-data name="FORCES" mesh="Beam-Left-Mesh" /> -->
+    <export:vtu directory="precice-exports" every-n-time-windows="100" />
+  </participant>
+
+  <participant name="Beam-Right">
+    <provide-mesh name="Beam-Right-Mesh" />
+    <receive-mesh name="Beam-Left-Mesh" from="Beam-Left" />
+    <read-data name="DISPLACEMENTS" mesh="Beam-Right-Mesh" />
+    <!-- <write-data name="FORCES" mesh="Beam-Right-Mesh" /> -->
     <mapping:nearest-neighbor
       direction="read"
-      from="OpenRadioss-Mesh2"
-      to="OpenRadioss-Mesh1"
+      from="Beam-Left-Mesh"
+      to="Beam-Right-Mesh"
       constraint="consistent" />
-    <export:vtu directory="precice-exports" every-n-time-windows = "100"/>
+    <!-- <mapping:nearest-neighbor
+      direction="write"
+      from="Beam-Right-Mesh"
+      to="Beam-Left-Mesh"
+      constraint="conservative" /> -->
+    <export:vtu directory="precice-exports" every-n-time-windows="100" />
   </participant>
 
-  <participant name="s2">
-    <export:vtu directory="precice-exports" every-n-time-windows = "100"/>
-    <provide-mesh name="OpenRadioss-Mesh2" />
-    <write-data name="DISPLACEMENTS" mesh="OpenRadioss-Mesh2" />
-    <read-data name="FORCES" mesh="OpenRadioss-Mesh2" />
-  </participant>
-
-  <m2n:sockets acceptor="s1" connector="s2" exchange-directory="../" />
+  <m2n:sockets acceptor="Beam-Right" connector="Beam-Left" exchange-directory=".." />
 
   <coupling-scheme:parallel-explicit>
-    <participants first="s1" second="s2" />
+    <participants first="Beam-Right" second="Beam-Left" />
     <max-time-windows value="300" />
     <time-window-size value="1e-2" />
-    <exchange data="DISPLACEMENTS" mesh="OpenRadioss-Mesh2" from="s2" to="s1" />
-    <exchange data="FORCES" mesh="OpenRadioss-Mesh2" from="s1" to="s2" />
+    <exchange data="DISPLACEMENTS" mesh="Beam-Left-Mesh" from="Beam-Left" to="Beam-Right" />
+    <!-- <exchange data="FORCES" mesh="Beam-Left-Mesh" from="Beam-Right" to="Beam-Left" /> -->
   </coupling-scheme:parallel-explicit>
 </precice-configuration>

@@ -4,4 +4,4 @@ set -e -u
 . ../../tools/cleaning-tools.sh
 
 clean_openradioss .
-rm -fv solid-openradiossA* solid-openradiossT*
+rm -fv beam-rightA* beam-rightT*

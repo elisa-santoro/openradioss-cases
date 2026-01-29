@@ -7,10 +7,10 @@ exec > >(tee --append "$LOGFILE") 2>&1
 
 . ../../tools/setup-openradioss.sh
 
-radioss_starter -i solid-openradioss_0000.rad
+radioss_starter -i beam-right_0000.rad
 
-radioss_engine -i solid-openradioss_0001.rad
+radioss_engine -i beam-right_0001.rad
 
-toVTK solid-openradioss
+toVTK beam-right
 
 close_log

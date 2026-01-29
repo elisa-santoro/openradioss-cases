@@ -103,12 +103,6 @@ pointData.csv
 # FEniCS covered by .vtk
 # Nutils covered by .vtk
 
-# OpenRadioss
-*.rst
-*openradioss*.out
-*openradiossA*
-*openradiossT*
-
 # System tests
 runs/
 
