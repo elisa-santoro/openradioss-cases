@@ -10,6 +10,6 @@ $radioss_starter -i beam-left_0000.rad
 
 $radioss_engine -i beam-left_0001.rad
 
-$toVTK beam-left
+toVTK beam-left
 
 close_log

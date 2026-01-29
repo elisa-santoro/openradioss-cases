@@ -10,6 +10,6 @@ $radioss_starter -i solid-openradioss_0000.rad
 
 $radioss_engine -i solid-openradioss_0001.rad
 
-$toVTK solid-openradioss
+toVTK solid-openradioss
 
 close_log
