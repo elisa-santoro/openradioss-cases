@@ -53,4 +53,3 @@ toCSV() {
         echo "Converted ${Rootname}T${history_number} → ${Rootname}_${history_number}.csv"
     done
 }
-
