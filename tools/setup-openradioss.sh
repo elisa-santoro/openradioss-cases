@@ -34,7 +34,7 @@ toVTK() {
     done
 }
 
-# Run `toCSV modelA` to convert all animation files modelAA* to CSV format
+# Run `toCSV modelA` to convert all animation files modelAT* to CSV format
 toCSV() {
 
     if [ $# -lt 1 ]; then
