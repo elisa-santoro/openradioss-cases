@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e -u
+set -u
 shopt -s expand_aliases
 
 # Set OPENRADIOSS_PATH in your ~/.bashrc, or uncomment the next line
@@ -18,13 +18,14 @@ toVTK() {
 
     if [ $# -lt 1 ]; then
         echo "ERROR - Usage: toVTK ROOTNAME"
+        return 1
     fi
 
     Rootname="$1"
 
     for file in "${Rootname}"A*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "WARNING: No files matching ${Rootname}A*"; }
+        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}A*"; return 1;}
 
         animation_number="${file#"${Rootname}A"}"
 
@@ -39,13 +40,14 @@ toCSV() {
 
     if [ $# -lt 1 ]; then
         echo "ERROR - Usage: toVTK ROOTNAME"
+        return 1
     fi
 
     Rootname="$1"
 
     for file in "${Rootname}"T*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "WARNING: No files matching ${Rootname}T*"; }
+        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}T*"; return 1;}
 
         history_number="${file#"${Rootname}T"}"
 
