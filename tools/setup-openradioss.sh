@@ -17,15 +17,14 @@ alias radiossCSV="$OPENRADIOSS_PATH/exec/th_to_csv_linux64_gf"
 toVTK() {
 
     if [ $# -lt 1 ]; then
-        echo "Usage: toVTK ROOTNAME"
-        return 1
+        echo "ERROR - Usage: toVTK ROOTNAME"
     fi
 
     Rootname="$1"
 
     for file in "${Rootname}"A*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "No files matching ${Rootname}A*"; return 1; }
+        [ -e "$file" ] || { echo "WARNING: No files matching ${Rootname}A*"; }
 
         animation_number="${file#"${Rootname}A"}"
 
@@ -39,15 +38,14 @@ toVTK() {
 toCSV() {
 
     if [ $# -lt 1 ]; then
-        echo "Usage: toVTK ROOTNAME"
-        return 1
+        echo "ERROR - Usage: toVTK ROOTNAME"
     fi
 
     Rootname="$1"
 
     for file in "${Rootname}"T*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "No files matching ${Rootname}T*"; return 1; }
+        [ -e "$file" ] || { echo "WARNING: No files matching ${Rootname}T*"; }
 
         history_number="${file#"${Rootname}T"}"
 
