@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<precice-configuration>
+  <log>
+    <sink
+      filter="%Severity% > debug and %Rank% = 0"
+      format="---[precice] %ColorizedSeverity% %Message%"
+      enabled="true" />
+  </log>
+
+  <data:vector name="FORCES" />
+  <data:vector name="DISPLACEMENTS" />
+
+  <mesh name="Beam-Right-Mesh" dimensions="3">
+    <use-data name="FORCES" />
+    <use-data name="DISPLACEMENTS" />
+  </mesh>
+
+  <mesh name="Beam-Left-Mesh" dimensions="3">
+    <use-data name="DISPLACEMENTS" />
+    <use-data name="FORCES" />
+  </mesh>
+
+  <participant name="Beam-Left">
+    <provide-mesh name="Beam-Left-Mesh" />
+    <write-data name="DISPLACEMENTS" mesh="Beam-Left-Mesh" />
+    <read-data name="FORCES" mesh="Beam-Left-Mesh" />
+    <export:vtu directory="precice-exports" every-n-time-windows="10" />
+  </participant>
+
+  <participant name="Beam-Right">
+    <provide-mesh name="Beam-Right-Mesh" />
+    <receive-mesh name="Beam-Left-Mesh" from="Beam-Left" />
+    <read-data name="DISPLACEMENTS" mesh="Beam-Right-Mesh" />
+    <write-data name="FORCES" mesh="Beam-Right-Mesh" />
+    <mapping:nearest-neighbor
+      direction="read"
+      from="Beam-Left-Mesh"
+      to="Beam-Right-Mesh"
+      constraint="consistent" />
+    <mapping:nearest-neighbor
+      direction="write"
+      from="Beam-Right-Mesh"
+      to="Beam-Left-Mesh"
+      constraint="conservative" />
+    <export:vtu directory="precice-exports" every-n-time-windows="10" />
+  </participant>
+
+  <m2n:sockets acceptor="Beam-Right" connector="Beam-Left" exchange-directory=".." />
+
+  <coupling-scheme:parallel-explicit>
+    <participants first="Beam-Right" second="Beam-Left" />
+    <max-time value="3.0" />
+    <time-window-size value="1e-2" />
+    <exchange data="DISPLACEMENTS" mesh="Beam-Left-Mesh" from="Beam-Left" to="Beam-Right" />
+    <exchange data="FORCES" mesh="Beam-Left-Mesh" from="Beam-Right" to="Beam-Left" />
+  </coupling-scheme:parallel-explicit>
+</precice-configuration>
+
