@@ -24,6 +24,4 @@ This is a uni-directional coupling, in which the left (loaded) participant sends
 
 ## State and results
 
-The simulation completes, and the results are as follows:
-
-![results](images/partitioned-beam-displacements-results.png)
+Pending
