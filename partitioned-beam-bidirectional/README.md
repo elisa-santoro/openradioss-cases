@@ -1,8 +1,8 @@
-# Partitioned beam: Uni-directional coupling (displacements)
+# Partitioned beam: Bi-directional coupling
 
-This is a uni-directional coupling, in which the left (loaded) participant sends displacements to the right participant.
+This is a bi-directional coupling, in which the left (loaded) participant sends displacements to the right participant and receives back forces.
 
-![preCICE configuration visualization](images/partitioned-beam-displacements-precice-config.png)
+![preCICE configuration visualization](images/partitioned-beam-bidirectional-precice-config.png)
 
 ## How to run
 
