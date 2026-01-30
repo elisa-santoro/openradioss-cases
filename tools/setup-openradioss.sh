@@ -17,14 +17,13 @@ toVTK() {
 
     if [ $# -lt 1 ]; then
         echo "ERROR - Usage: toVTK ROOTNAME"
-        return 1
     fi
 
     Rootname="$1"
 
     for file in "${Rootname}"A*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}A*"; return 1; }
+        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}A*"; }
 
         animation_number="${file#"${Rootname}A"}"
 
@@ -34,19 +33,18 @@ toVTK() {
     done
 }
 
-# Run `toCSV modelA` to convert all animation files modelAA* to CSV format
+# Run `toCSV modelA` to convert all animation files modelAT* to CSV format
 toCSV() {
 
     if [ $# -lt 1 ]; then
         echo "ERROR - Usage: toVTK ROOTNAME"
-        return 1
     fi
 
     Rootname="$1"
 
     for file in "${Rootname}"T*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}T*"; return 1; }
+        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}T*"; }
 
         history_number="${file#"${Rootname}T"}"
 
@@ -55,4 +53,3 @@ toCSV() {
         echo "Converted ${Rootname}T${history_number} → ${Rootname}_${history_number}.csv"
     done
 }
-
