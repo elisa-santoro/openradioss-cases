@@ -25,7 +25,7 @@ toVTK() {
 
     for file in "${Rootname}"A*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}A*"; return 1;}
+        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}A*"; return 1; }
 
         animation_number="${file#"${Rootname}A"}"
 
@@ -47,7 +47,7 @@ toCSV() {
 
     for file in "${Rootname}"T*; do
         # skip if no matching files
-        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}T*"; return 1;}
+        [ -e "$file" ] || { echo "ERROR: No files matching ${Rootname}T*"; return 1; }
 
         history_number="${file#"${Rootname}T"}"
 
