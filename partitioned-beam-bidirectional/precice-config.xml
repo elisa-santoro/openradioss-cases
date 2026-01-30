@@ -24,7 +24,7 @@
     <provide-mesh name="Beam-Left-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Beam-Left-Mesh" />
     <read-data name="FORCES" mesh="Beam-Left-Mesh" />
-    <export:vtu directory="precice-exports" every-n-time-windows="10" />
+    <export:vtu directory="precice-exports" every-n-time-windows="1" />
   </participant>
 
   <participant name="Beam-Right">
@@ -42,7 +42,7 @@
       from="Beam-Right-Mesh"
       to="Beam-Left-Mesh"
       constraint="conservative" />
-    <export:vtu directory="precice-exports" every-n-time-windows="10" />
+    <export:vtu directory="precice-exports" every-n-time-windows="1" />
   </participant>
 
   <m2n:sockets acceptor="Beam-Right" connector="Beam-Left" exchange-directory=".." />
