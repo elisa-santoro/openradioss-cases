@@ -3,7 +3,7 @@ set -e -u
 shopt -s expand_aliases
 
 # Set OPENRADIOSS_PATH in your ~/.bashrc, or uncomment the next line
-export OPENRADIOSS_PATH="/home/testuser/OpenRadioss"
+# export OPENRADIOSS_PATH="/home/testuser/OpenRadioss"
 export RAD_CFG_PATH=$OPENRADIOSS_PATH/hm_cfg_files
 export OMP_STACKSIZE=400m
 export LD_LIBRARY_PATH="$OPENRADIOSS_PATH/extlib/hm_reader/linux64/:$OPENRADIOSS_PATH/extlib/h3d/lib/linux64/:$LD_LIBRARY_PATH"
