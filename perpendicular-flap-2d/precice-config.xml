@@ -33,12 +33,14 @@
     <mapping:rbf direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent">
       <basis-function:compact-polynomial-c6 support-radius="1." />
     </mapping:rbf>
+    <export:vtu directory="precice-exports" every-n-time-windows="10" />
   </participant>
 
   <participant name="Solid">
     <provide-mesh name="Solid-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
+    <export:vtu directory="precice-exports" every-n-time-windows="10" />
   </participant>
 
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
