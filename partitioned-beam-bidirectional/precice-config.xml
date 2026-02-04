@@ -50,7 +50,7 @@
   <coupling-scheme:parallel-explicit>
     <participants first="Beam-Right" second="Beam-Left" />
     <max-time value="3.0" />
-    <time-window-size value="1e-2" />
+    <time-window-size value="1e-6" />
     <exchange data="DISPLACEMENTS" mesh="Beam-Left-Mesh" from="Beam-Left" to="Beam-Right" />
     <exchange data="FORCES" mesh="Beam-Left-Mesh" from="Beam-Right" to="Beam-Left" />
   </coupling-scheme:parallel-explicit>
