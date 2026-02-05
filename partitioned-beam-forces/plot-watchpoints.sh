@@ -18,7 +18,7 @@ gnuplot -p << EOF
 	set grid                                                                        
 	set title 'FORCES (y-component) - $EXPERIMENT'
 	set xlabel 'time [s]'
-	set ylabel 'x-displacement [m]'
+	set ylabel 'FORCES (y-component)'
   set term pngcairo enhanced size 900,654
   set output "images/watchpoints.png"
 	plot [0.0:3.0] \
