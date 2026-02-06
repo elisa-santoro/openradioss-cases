@@ -36,9 +36,14 @@ boundaryField
         type            calculated;
         value           uniform 0;
     }
-    frontAndBack
+    front
     {
-        type            empty;
-        value           nonuniform 0;
+        type            symmetryPlane;
+        value           uniform 0;
+    }
+    back
+    {
+        type            symmetryPlane;
+        value           uniform 0;
     }
 }

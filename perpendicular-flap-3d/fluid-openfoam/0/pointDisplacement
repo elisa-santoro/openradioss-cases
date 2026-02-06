@@ -40,8 +40,12 @@ boundaryField
         type            slip;
     }
 
-    frontAndBack
+    front
     {
-        type            empty;
+        type            symmetryPlane;
+    }
+    back
+    {
+        type            symmetryPlane;
     }
 }
