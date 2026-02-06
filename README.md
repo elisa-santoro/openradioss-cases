@@ -10,7 +10,7 @@ Specifically, it is possible to find:
     - **The case runs well and completes**.
     - Possible to attest that **reading and writing displacements through the OpenRadioss adapter is properly configured**.
 
-- `Partitioned-beam-forces` – **Under investigation**
+- `Partitioned-beam-forces` – **Under investigation for instability - Completed for thesis purposes**
     - Same _participants_, _physical scenario_ and _boundary conditions_ as `partitioned-beam-displacements`.
     -   Implementation of a `uni-directional coupling`: one structural participant sends **forces** to the other structure.
   - Two possible variants:
