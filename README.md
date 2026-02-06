@@ -15,7 +15,7 @@ Specifically, it is possible to find:
     -   Implementation of a `uni-directional coupling`: one structural participant sends **forces** to the other structure.
   - Two possible variants:
     - `Radioss-Radioss` with `time-window-size = 1e-1` - **Case runs well and completes**;
-    - `Radioss-Radioss` with `time-window-size = 1e-2` - **Case runs and completes**, however _some instabilities are observed_ (https://github.com/elisa-santoro/openradioss-cases/issues/12).
+    - `Radioss-Radioss` with `time-window-size = 1e-2` -  **Case runs**, but **completes only for the** `Beam-Left` **partecipant**. `Beam-Right` **partecipant** hangs within the coupling starting from `time-window-size = 99`. In addition to that, _some instabilities are observed_ (https://github.com/elisa-santoro/openradioss-cases/issues/12) when post-processing the **temporal evolution of forces being written** by `Beam-Left`.
   - **Reason why of these instabilities - To be further discussed in my thesis**
     - Out-of-syncronization between Radioss solvers (both using an _adaptive time step_) and preCICE.
     - Concept of **subcycling**: for how the coupling Library is configured, preCICE would _only allow one Radioss partecipant to have a smaller time step smaller than the_ `time-window-size`. When both solvers resort to subcycling, the observed instability comes up.
