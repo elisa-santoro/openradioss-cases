@@ -7,9 +7,9 @@ exec > >(tee --append "$LOGFILE") 2>&1
 
 . ../../tools/setup-openradioss.sh
 
-radioss_starter -i flap2D_0000.rad
+radioss_starter -i solid-openradioss-2d_0000.rad
 
-radioss_engine -i flap2D_0001.rad
+radioss_engine -i solid-openradioss-2d_0001.rad
 
 toVTK flap2D
 
