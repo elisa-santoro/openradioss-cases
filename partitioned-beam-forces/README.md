@@ -38,11 +38,11 @@ It's believed that the **reason for these instabilities to occur** lies in the _
 
 `time-window-size = 1e-1`
 
-<img width="1920" height="1080" alt="0_correctWriting_Beam-Left" src="https://github.com/user-attachments/assets/0b361b94-87cc-4252-a626-5d317cfe4b21" />
+<img width="480" height="270" alt="0_correctWriting_Beam-Left" src="https://github.com/user-attachments/assets/0b361b94-87cc-4252-a626-5d317cfe4b21" />
 
 The **writing FORCES** from `Beam-Left` to preCICE appears to be correct throughout the whole simulation.
 
-<img width="1920" height="1080" alt="1_correctWritingandReading" src="https://github.com/user-attachments/assets/222430ba-09ed-4669-8ca7-c1c1c11c4fe9" />
+<img width="480" height="270" alt="1_correctWritingandReading" src="https://github.com/user-attachments/assets/222430ba-09ed-4669-8ca7-c1c1c11c4fe9" />
 
 There seems to be a correspondence between the **FORCES written** and the **FORCES read** inside preCICE throughout the whole simulation. 
 - Larger spheres = Forces written by `Beam-Left` to preCICE;
@@ -56,16 +56,16 @@ The **writing FORCES** from `Beam-Left` to preCICE appears to be correct for the
 
 Setting two watchpoints on the spheres for `P = (0.25, 0.4, 6) [m]` and `Q = (0.25, 0.1, 6) [m]`, it is possible to plot the _temporal evolution of the total force on the Y-Direction_: the following plots are obtained.
 
-<img width="900" height="654" alt="0_watchpoints_dT_1e-2" src="https://github.com/user-attachments/assets/dcbc6bd7-79c1-4ce3-9d5a-44a625cb2621" />
+<img width="675" height="491" alt="0_watchpoints_dT_1e-2" src="https://github.com/user-attachments/assets/dcbc6bd7-79c1-4ce3-9d5a-44a625cb2621" />
 -
 
 For the first two seconds of the simulation, everything matches as shown below (where it is also possible to observe `Beam-Right` hanging for `t = 0.99 s`).
 
-<img width="900" height="654" alt="1_watchpoints_dT_1e-2_timeZerotoTwo" src="https://github.com/user-attachments/assets/7b30b9b1-324e-4d9e-bbde-cccee50358e4" />
+<img width="675" height="491" alt="1_watchpoints_dT_1e-2_timeZerotoTwo" src="https://github.com/user-attachments/assets/7b30b9b1-324e-4d9e-bbde-cccee50358e4" />
 -
 
 Later on, a clear specular discrepancy between the values registered along these two watch-points becomes apparent, and the total force along the Y-Direction continues to increase in magnitude causing instability. 
 
-<img width="900" height="654" alt="2_watchpoints_dT_1e-2_timeOnetoTwonTwo" src="https://github.com/user-attachments/assets/d7a1db8d-fe64-4a66-b5db-76dfb7344192" />
+<img width="675" height="491" alt="2_watchpoints_dT_1e-2_timeOnetoTwonTwo" src="https://github.com/user-attachments/assets/d7a1db8d-fe64-4a66-b5db-76dfb7344192" />
 
 
