@@ -47,12 +47,12 @@
 
   <m2n:sockets acceptor="Beam-Right" connector="Beam-Left" exchange-directory=".." />
 
-  <coupling-scheme:parallel-explicit>
-    <participants first="Beam-Right" second="Beam-Left" />
+  <coupling-scheme:serial-explicit>
+    <participants first="Beam-Left" second="Beam-Right" />
     <max-time value="3.0" />
     <time-window-size value="1e-9" />
     <exchange data="DISPLACEMENTS" mesh="Beam-Left-Mesh" from="Beam-Left" to="Beam-Right" />
     <exchange data="FORCES" mesh="Beam-Left-Mesh" from="Beam-Right" to="Beam-Left" />
-  </coupling-scheme:parallel-explicit>
+  </coupling-scheme:serial-explicit>
 </precice-configuration>
 
