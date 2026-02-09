@@ -1,9 +1,10 @@
-# Perpendicular flap: 3D
+# Perpendicular flap: 3D Uni-Directional Coupling (FORCES)
 
-This is a variant of the [perpendicular flap tutorial](https://precice.org/tutorials-perpendicular-flap.html) in 3D and with explicit coupling.
-These modifications only come from current restrictions in the OpenRadioss setup (and the fact that OpenRadioss is an explicit solver).
+This is a variant of the [perpendicular flap tutorial](https://precice.org/tutorials-perpendicular-flap.html) in 3D and with explicit coupling, where a **uni-directional coupling** is implemented with the `Fluid` participant sending **FORCES** to the `Solid` one.
 
-![preCICE configuration visualization](images/perpendicular-flap-3d-precice-config.png)
+The modifications pertaining the 3D nature of the domain, as well as the explicit coupling scheme choice, come from current restrictions in the OpenRadioss setup (and the fact that OpenRadioss is an explicit solver).
+
+![preCICE configuration visualization](images/perpendicular-flap-3d-unidirectional-precice-config.png)
 
 ## How to run
 
@@ -26,4 +27,6 @@ These modifications only come from current restrictions in the OpenRadioss setup
 
 ## State and results
 
-The simulation completes (currently configured to run up to t=0.5s), but no displacement is observed.
+The simulation completes (currently configured to run up to t=0.5s), and it is possible to observe the `Solid` element to displace accordingly to the FORCES sent to him by the `Fluid` participant.
+
+Since the coupling is **not** configured to send DISPLACEMENTS back from the `Solid` participant to the `Fluid`, no displacement is observed within the `Fluid-Mesh`. 
