@@ -23,7 +23,7 @@ interfaces
     
     readData
     (
-      Displacement
+      DISPLACEMENTS
     );
 
     writeData
@@ -43,7 +43,7 @@ interfaces
 
     writeData
     (
-      Stress
+      FORCES
     );
   };
 };
