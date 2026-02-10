@@ -1,0 +1,83 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+scale               1;  
+
+// Dimensions: 
+// Block 1: 0.5 (x) by 0.5 (y) by 2m (z) - Starting from z = 6m
+
+vertices
+(
+    // Block 1: Lower Face (z = 6m)
+    (0 0 6)         // 0
+    (0.5 0 6)       // 1
+    (0.5 0.5 6)     // 2
+    (0 0.5 6)       // 3
+
+    // Block 1: Upper Face (z = 8m)
+    (0 0 8)      // 4
+    (0.5 0 8)    // 5
+    (0.5 0.5 8)  // 6
+    (0 0.5 8)    // 7
+
+);
+
+blocks
+(
+    // hex (v0 v1 v2 v3 v4 v5 v6 v7) (n_x n_y n_z) simpleGrading (1 1 1)
+
+    // Block 1
+
+    hex (0 1 2 3 4 5 6 7)           
+    (11 11 41)                       // Number of cells in (x, y, z) directions
+    simpleGrading (1 1 1)           // Simple uniform grading
+
+);
+
+boundary               // Keyword
+(
+    lateralWalls       // Patch name
+    {
+        type patch;    // patch type for patch 0
+        faces
+        (
+            (0 1 5 4) // Bottom Face - Block 1
+            (0 4 7 3)  // Left Face Block 1
+            (2 6 5 1)  // Right Face Block 1
+        );
+    }
+
+    loadedSurface
+    {
+        type patch;    // patch type for patch 0
+        faces
+        (
+            (3 7 6 2)  // Top Face Block 1
+        );
+    }
+
+    fixedEnd             // patch name
+    {
+        type patch;    // patch type for patch 1
+        faces
+        (
+            (4 5 6 7) // Front Face - Block 1
+        );
+    }
+    
+    interface
+    {
+        type patch;
+        faces
+        (
+            // Block 1
+            (0 3 2 1)
+        );
+    }
+);
+

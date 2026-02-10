@@ -27,3 +27,10 @@ This is a uni-directional coupling, in which the left (loaded) participant sends
 The simulation completes, and the results are as follows:
 
 ![results](images/partitioned-beam-displacements-results.png)
+
+## Alternative Variant - Structural Participant writing displacements modelled in OpenFOAM
+
+In this repository it is also possible to find a variant (in the `beam-left-openfoam` directory) where the `Beam-Left` participant is modelled in OpenFOAM
+using the `solidDisplacementFoam` solver. 
+
+The results and conclusions are the same as the ones presented above.
