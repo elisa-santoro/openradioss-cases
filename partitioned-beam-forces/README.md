@@ -68,4 +68,15 @@ Later on, a clear specular discrepancy between the values registered along these
 
 <img width="675" height="491" alt="2_watchpoints_dT_1e-2_timeOnetoTwonTwo" src="https://github.com/user-attachments/assets/d7a1db8d-fe64-4a66-b5db-76dfb7344192" />
 
+## Alternative Variant - Structural Participant reading forces modelled in OpenFOAM
+
+In this repository it is also possible to find a variant (in the `beam-right-openfoam` directory) where the `Beam-Right` participant is modelled in OpenFOAM. 
+
+Specifically, the OpenFOAM solver used for this purpose is `solidDisplacementFoam`, and to evaluate the force field written by the Radioss solver (`Beam-Left` participant) to the OpenFOAM `interface` the corresponding patch has been labeled as `type solidDisplacementFoamForce` in the `0/D` folder. 
+
+This label is a `custom patchField type` originally defined to model in OpenFOAM the solid flap presented in this [preCICE tutorial](https://precice.org/tutorials-perpendicular-flap).
+
+The `solidDisplacementFoamForce` directory has therefore been copied from the [preCICE tutorials repository available on Github](https://github.com/precice/tutorials/tree/develop/perpendicular-flap/solid-openfoam/solidDisplacementFoamForce) and pasted inside the `beam-right-openfoam` directory.
+
+
 
