@@ -19,4 +19,5 @@ This is the monolithic test case implementation used to validate the `partitione
 
 The simulation completes, and the results are as follows:
 
-![results](images/partitioned-beam-displacements-results.png)
+<img width="3840" height="2160" alt="0_monolithic" src="https://github.com/user-attachments/assets/1d39c187-562d-4f72-ba90-4df98f5db3aa" />
+<img width="3840" height="2160" alt="Screenshot (55)" src="https://github.com/user-attachments/assets/d8e74802-b6a2-40b5-87e8-fe54c71dbd21" />
