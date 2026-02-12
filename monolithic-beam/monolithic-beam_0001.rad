@@ -1,4 +1,4 @@
-/RUN/partitionedBeam_Test1/1/
+/RUN/monolithic-beam/1/
 3.0   
 /VERS/2024
 
@@ -22,4 +22,5 @@
 0.005
 #
 /PRINT/-100
+
 #
