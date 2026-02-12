@@ -15,11 +15,11 @@ modules (FSI);
 
 interfaces
 {
-  Interface1
+  Interface
   {
-    mesh              Fluid-Mesh-Nodes;
+    mesh              Fluid-Mesh;
     patches           (flap);
-    locations         faceNodes;
+    locations         faceCenters;
     
     readData
     (
@@ -28,25 +28,10 @@ interfaces
 
     writeData
     (
-    );
-  };
-
-  Interface2
-  {
-    mesh              Fluid-Mesh-Faces;
-    patches           (flap);
-    locations         faceCenters;
-
-    readData
-    (
-    );
-
-    writeData
-    (
       FORCES
     );
   };
-};
+}
 
 FSI
 {
