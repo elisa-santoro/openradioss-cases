@@ -16,12 +16,48 @@ boundaryField
 {
     inlet
     {
-     // Time-varying parabolic inlet profile
-     type            groovyBC;
-     variables "yp=pts().y;para=-2*((2500/81)*(pos().y)*(pos().y-0.6)*(pos().z+0.6)*(pos().z-0.6))*normal();";
-     valueExpression "time()<10 ? 0.5*(1-cos(pi*time()))*para : 0*para";
-     value           uniform (1 0 0);
-}
+    type            codedFixedValue;
+    value           uniform (0 0 0);
+    name            timeVaryingParabolic;
+
+    code
+    #{
+        const vectorField& Cf = patch().Cf();        // face centres
+        const vectorField& n  = patch().nf();        // face normals (unit normals)
+        vectorField& field    = *this;
+
+        const scalar pi = constant::mathematical::pi;
+        const scalar t  = this->db().time().value();
+
+        forAll(Cf, faceI)
+        {
+            const scalar y = Cf[faceI].y();
+            const scalar z = Cf[faceI].z();
+
+            // Equivalent of:
+            // para = -2*((2500/81)*y*(y-0.6)*(z+0.6)*(z-0.6))*normal();
+
+            const scalar poly =
+                -2.0 * (2500.0/81.0)
+                * y * (y - 0.6)
+                * (z + 0.6)
+                * (z - 0.6);
+
+            vector para = poly * n[faceI];
+
+            if (t < 10.0)
+            {
+                scalar ramp = 0.5 * (1.0 - cos(pi * t));
+                field[faceI] = ramp * para;
+            }
+            else
+            {
+                field[faceI] = vector::zero;
+            }
+        }
+    #};
+    }
+
     outlet
     {
         type            zeroGradient;
