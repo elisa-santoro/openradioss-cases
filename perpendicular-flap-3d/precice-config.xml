@@ -27,12 +27,16 @@
     <receive-mesh name="Solid-Mesh" from="Solid" />
     <write-data name="FORCES" mesh="Fluid-Mesh" />
     <read-data name="DISPLACEMENTS" mesh="Fluid-Mesh" />
-    <mapping:rbf direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative">
-      <basis-function:compact-polynomial-c6 support-radius="1." />
-    </mapping:rbf>
-    <mapping:rbf direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent">
-      <basis-function:compact-polynomial-c6 support-radius="1." />
-    </mapping:rbf>
+    <mapping:nearest-neighbor 
+     direction="write"
+     from="Fluid-Mesh"
+     to="Solid-Mesh" 
+     constraint="conservative" />
+    <mapping:nearest-neighbor 
+     direction="read"
+     from="Solid-Mesh"
+     to="Fluid-Mesh"
+     constraint="consistent" />
     <export:vtu directory="precice-exports" every-n-time-windows="500" />
   </participant>
 
