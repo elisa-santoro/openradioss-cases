@@ -10,7 +10,7 @@ This is the monolithic test case implementation used to validate the `partitione
 
    ```sh
    # Terminal 1
-   cd partitioned-beam-monolithic
+   cd monolithic-beam
    ./run.sh
 
    This script relies on the `../tools/setup-openradioss.sh` script.
