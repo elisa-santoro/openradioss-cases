@@ -28,10 +28,10 @@
     <write-data name="FORCES" mesh="Fluid-Mesh" />
     <read-data name="DISPLACEMENTS" mesh="Fluid-Mesh" />
     <mapping:rbf direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative">
-      <basis-function:compact-polynomial-c6 support-radius="1." />
+      <basis-function:compact-polynomial-c6 support-radius="0.055" />
     </mapping:rbf>
     <mapping:rbf direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent">
-      <basis-function:compact-polynomial-c6 support-radius="1." />
+      <basis-function:compact-polynomial-c6 support-radius="0.045" />
     </mapping:rbf>
     <export:vtu directory="precice-exports" every-n-time-windows="50" />
   </participant>
@@ -48,7 +48,7 @@
 
   <coupling-scheme:serial-explicit>
     <time-window-size value="1e-2" />
-    <max-time value="30.0" />
+    <max-time value="0.5" />
     <participants first="Fluid" second="Solid" />
     <exchange data="FORCES" mesh="Solid-Mesh" from="Fluid" to="Solid" />
     <exchange data="DISPLACEMENTS" mesh="Solid-Mesh" from="Solid" to="Fluid" />
