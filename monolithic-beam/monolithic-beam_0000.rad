@@ -10,7 +10,7 @@
 ##
 /BEGIN
 #Runname                                                                        
-partitionedBeam_Test1                                                          
+monolithic-beam                                                          
 #   Invers      Irun
       2024         0
 #    Input_mass_unit   Input_length_unit     Input_time_unit
