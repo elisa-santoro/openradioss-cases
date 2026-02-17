@@ -438,7 +438,7 @@ beamMaterial
 /PROP/SOLID/1
 beamProperty                                                                                        
 #   Isolid    Ismstr      Iale     Icpre  Itetra10     Inpts   Itetra4    Iframe                  Dn
-         1         0         0         0         0         0         0         0                 0.0
+        18         0         0         0         0         0         0         0                 0.0
 #                 qa                  qb                   h              Lambda                  Mu
                  0.0                 0.0                 0.0                 0.0                 0.0
 #         deltaT_min            Vdef_min            Vdef_max             ASP_max             COL_min
