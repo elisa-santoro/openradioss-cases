@@ -29,3 +29,6 @@ These modifications only come from current restrictions in the OpenRadioss setup
 The simulation completes (currently configured to run up to t=5s), and it is possible to observe that the fluid-induced forces transferred through the coupling cause the solid flap to deflect with a tip displacement on the order of 20cm.
 
 Since the counter-coupling of displacements from the `Solid` to the `Fluid` participant also seem to be successful, it is possible to see that the `Fluid-Mesh` moves as well accordingly to the solid flap deflection.
+
+<img width="3840" height="2160" alt="Screenshot (277)" src="https://github.com/user-attachments/assets/65088696-b442-4f3b-b928-cedda47c6d37" />
+
