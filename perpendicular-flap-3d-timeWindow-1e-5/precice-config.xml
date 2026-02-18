@@ -37,21 +37,21 @@
      from="Solid-Mesh"
      to="Fluid-Mesh"
      constraint="consistent" />
-    <export:vtu directory="precice-exports" every-n-time-windows="500" />
+    <export:vtu directory="precice-exports" every-n-time-windows="5000" />
   </participant>
 
   <participant name="Solid">
     <provide-mesh name="Solid-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
-    <export:vtu directory="precice-exports" every-n-time-windows="500" />
+    <export:vtu directory="precice-exports" every-n-time-windows="5000" />
     <watch-point mesh="Solid-Mesh" name="Flap-Tip" coordinate="0.0;1.0;0.0" />
   </participant>
 
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
 
   <coupling-scheme:serial-explicit>
-    <time-window-size value="1e-4" />
+    <time-window-size value="1e-5" />
     <max-time value="5.0" />
     <participants first="Fluid" second="Solid" />
     <exchange data="FORCES" mesh="Solid-Mesh" from="Fluid" to="Solid" />
