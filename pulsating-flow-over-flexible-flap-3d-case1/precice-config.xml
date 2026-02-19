@@ -33,14 +33,14 @@
     <mapping:rbf direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent">
       <basis-function:compact-polynomial-c6 support-radius="0.15" />
     </mapping:rbf>
-    <export:vtu directory="precice-exports" every-n-time-windows="50" />
+    <export:vtu directory="precice-exports" every-n-time-windows="500" />
   </participant>
 
   <participant name="Solid">
     <provide-mesh name="Solid-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
-    <export:vtu directory="precice-exports" every-n-time-windows="50" />
+    <export:vtu directory="precice-exports" every-n-time-windows="500" />
     <watch-point mesh="Solid-Mesh" name="Center-Front-Tip" coordinate="0.52;0.35;0.0" />
     <watch-point mesh="Solid-Mesh" name="Left-Back-Tip" coordinate="0.57;0.35;-0.3" />
   </participant>
