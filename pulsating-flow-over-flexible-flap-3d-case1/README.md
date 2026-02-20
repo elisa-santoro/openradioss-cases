@@ -8,6 +8,12 @@ fell on a `serial-explicit` configuration over the `parallel-implicit` scheme im
 
 ![preCICE configuration visualization](images/pulsating-flow-over-flexible-flap-3d-precice-config.png)
 
+## Mesh Configuration
+
+The test case implemented within this repository implements what the [OpenFOAM adapter validation paper](https://journal.openfoam.com/index.php/ofj/article/view/88/78) refer to as `coarse` mesh.
+
+This means the `Solid` participant modelled in OpenRadioss is discretized with 48 `HEX20` solid elements, arranged with a 2 x 4 x 6 cell resolution along the three spatial directions.
+
 ## How to run
 
 1. Install OpenRadioss and set the `OPENRADIOSS_PATH` in your environment (includes the `starter/` and `engine/` directories)
