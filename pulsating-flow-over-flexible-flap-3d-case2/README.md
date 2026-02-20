@@ -4,7 +4,7 @@ This is a variant of the "Pulsating flow over flexible flap" test case discussed
 participant is modelled in OpenRadioss.
 
 Given the current restrictions presented when interfacing OpenRadioss (an explicit solver) to the preCICE coupling library, the `coupling-scheme` choice implemented in this repository 
-fell on a `serial-explicit` configuration over the `parallel-implicit` scheme implemented in the paper mentioned above. 
+fell on a `parallel-explicit` configuration over the `parallel-implicit` scheme implemented in the paper mentioned above. 
 
 ![preCICE configuration visualization](images/pulsating-flow-over-flexible-flap-3d-precice-config.png)
 
