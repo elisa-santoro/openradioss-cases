@@ -51,7 +51,8 @@ The simulation has been run for 26 seconds instead of 30 due to storage issues i
 
 #### Cross-section of the computational domain at `z= 0 m`: Temporal Evolution
 
-https://github.com/user-attachments/assets/08be254f-628c-4f2d-b445-bbc85d012320
+
+https://github.com/user-attachments/assets/6436c200-aef8-450f-9f48-80f8b25f70b1
 
 #### Watchpoints post-processing
 
@@ -62,6 +63,7 @@ Central WatchPoint
 Left WatchPoint
 
 ![Watchpoint-Left](https://github.com/user-attachments/assets/3d2b4b77-860b-4dc6-9134-f4cd80e6ba45)
+
 
 
 
