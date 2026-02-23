@@ -39,25 +39,27 @@ The simulation completes, and the results are as follows:
 
 #### Simulation setup at `t= 2.5 s`
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/ea869dc8-7fb9-4105-8ecc-40030eb44af3" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/1e6b49c1-e5eb-408d-a1ff-388e10b0fd09" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/70b516be-4fc8-4543-adc0-e03d6be7b8d0" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/05765ddb-397f-4948-b509-b5cb9e7bba01" />
+<img width="1920" height="1080" alt="1_Set-up-2and5secs-1" src="https://github.com/user-attachments/assets/7e4a5dc1-ab3d-4dd6-8717-9cb1baa18a57" />
+<img width="1920" height="1080" alt="2_Set-up-2and5secs-2" src="https://github.com/user-attachments/assets/44b8482e-d1d2-4d97-82dc-c1a5eadfe597" />
+<img width="1920" height="1080" alt="3_Set-up-2and5secs-3" src="https://github.com/user-attachments/assets/8b5f3203-960f-47cf-81f8-fb92a0ca3bb9" />
 
 #### Cross-section of the computational domain at `z= 0 m` and `t= 2.5s`
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/8f71975d-092d-402a-a671-c1fbf63c8ce7" />
+![4_cross-section-2and5secs](https://github.com/user-attachments/assets/2cb79f3c-ff19-4652-a4e6-5dc313e4eb04)
+
 
 #### Cross-section of the computational domain at `z= 0 m`: Temporal Evolution
 
-https://github.com/user-attachments/assets/f07708c2-4c6a-442d-a8cd-58d75697b7da
+https://github.com/user-attachments/assets/93a2f6d9-3868-43ab-ae0d-e25be37def33
 
 #### Watchpoints post-processing
 
 Central WatchPoint
 
-![watchpoint_Center](https://github.com/user-attachments/assets/35ce629e-a2de-48dd-89bd-9bd8fde84485)
+![watchpoint_Center](https://github.com/user-attachments/assets/221b0fb6-95aa-4359-922f-29a32a7b3b56)
+
 Left WatchPoint
 
-![watchpoint_Left](https://github.com/user-attachments/assets/b760eafb-5b11-47ac-999d-4cb53e3c1cb1)
+![watchpoint_Left](https://github.com/user-attachments/assets/af9a918b-7451-4f9a-b67f-6a5b09005258)
+
 
