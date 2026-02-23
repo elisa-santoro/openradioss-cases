@@ -35,35 +35,31 @@ This means the `Solid` participant modelled in OpenRadioss is discretized with 3
 
 ## State and results
 
-The simulation has been run for 26 seconds instead of 30 due to storage issues inside my VM. It completes and results are as follows:
+The simulation run for 26 seconds instead of 30 due to storage issues inside my VM. It completes and results are as follows:
 
 #### Simulation setup at `t= 2.5 s`
 
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/94ea7177-d637-40b1-9f21-a4161e6bb914" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/049ac2f8-1435-4620-b441-16a1ce2b1d57" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a9a86bde-ea87-41a8-aa98-eb95e6c44bf4" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/328811c5-1d54-491d-ab64-035e62aae7c4" />
+<img width="1920" height="1080" alt="set-up-2and5secs-1" src="https://github.com/user-attachments/assets/7c00b225-865b-4c23-8ad2-5e392034db22" />
+<img width="1920" height="1080" alt="set-up-2and5secs-2" src="https://github.com/user-attachments/assets/cf9b2bcf-2224-4db1-baf3-115bc9dce585" />
+<img width="1920" height="1080" alt="set-up-2and5secs-3" src="https://github.com/user-attachments/assets/a817a2db-7c80-4ac0-98f1-0e4ff0406c99" />
+<img width="1920" height="1080" alt="set-up-2and5secs-4" src="https://github.com/user-attachments/assets/ca7e787c-74ba-44e8-9799-b35a2ad2bf9f" />
+<img width="1920" height="1080" alt="set-up-2and5secs-5" src="https://github.com/user-attachments/assets/fd5c7a3d-1617-46a5-9228-47f6d03f2082" />
 
 #### Cross-section of the computational domain at `z= 0 m` and `t= 2.5s`
 
-<img width="1920" height="1080" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/50f25b52-354c-4ea5-bcb3-0ed043435ac5" />
-<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4206fda9-e9a0-46bd-9859-0969799dc6a1" />
+<img width="1920" height="1080" alt="cross-section-2and5secs-1" src="https://github.com/user-attachments/assets/996ead57-7986-42ff-bc2a-2c82a570ee6f" />
+<img width="1920" height="1080" alt="cross-section-2and5secs-2" src="https://github.com/user-attachments/assets/935c8aed-585f-4881-ba89-d50502be0581" />
 
-#### Cross-section of the computational domain at `z= 0 m`: Temporal Evolution
+#### Cross-section of the computational domain at `z= 0 m`: Temporal Evolution (up to t = 25.5 s)
 
-
-https://github.com/user-attachments/assets/6436c200-aef8-450f-9f48-80f8b25f70b1
+https://github.com/user-attachments/assets/7f60372a-2f56-4e46-b326-6db85de5b306
 
 #### Watchpoints post-processing
 
 Central WatchPoint
 
-![Watchpoint-Central](https://github.com/user-attachments/assets/8a68ca97-4c6e-4155-bb68-565d4ac86c0d)
+![Watchpoint-Central](https://github.com/user-attachments/assets/416a7328-0ce9-4d68-9852-5909fd88a884)
 
 Left WatchPoint
 
-![Watchpoint-Left](https://github.com/user-attachments/assets/3d2b4b77-860b-4dc6-9134-f4cd80e6ba45)
-
-
-
-
+![Watchpoint-Left](https://github.com/user-attachments/assets/f978e284-27e9-4ef1-8f43-f677bff3336f)
