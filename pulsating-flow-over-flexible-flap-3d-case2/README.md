@@ -35,6 +35,33 @@ This means the `Solid` participant modelled in OpenRadioss is discretized with 3
 
 ## State and results
 
-Under investigation: results will be posted soon.
+The simulation has been run for 26 seconds instead of 30 due to storage issues inside my VM. It completes and results are as follows:
+
+#### Simulation setup at `t= 2.5 s`
+
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/94ea7177-d637-40b1-9f21-a4161e6bb914" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/049ac2f8-1435-4620-b441-16a1ce2b1d57" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/a9a86bde-ea87-41a8-aa98-eb95e6c44bf4" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/328811c5-1d54-491d-ab64-035e62aae7c4" />
+
+#### Cross-section of the computational domain at `z= 0 m` and `t= 2.5s`
+
+<img width="1920" height="1080" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/50f25b52-354c-4ea5-bcb3-0ed043435ac5" />
+<img width="1920" height="1080" alt="Image" src="https://github.com/user-attachments/assets/4206fda9-e9a0-46bd-9859-0969799dc6a1" />
+
+#### Cross-section of the computational domain at `z= 0 m`: Temporal Evolution
+
+https://github.com/user-attachments/assets/08be254f-628c-4f2d-b445-bbc85d012320
+
+#### Watchpoints post-processing
+
+Central WatchPoint
+
+![Watchpoint-Central](https://github.com/user-attachments/assets/8a68ca97-4c6e-4155-bb68-565d4ac86c0d)
+
+Left WatchPoint
+
+![Watchpoint-Left](https://github.com/user-attachments/assets/3d2b4b77-860b-4dc6-9134-f4cd80e6ba45)
+
 
 
