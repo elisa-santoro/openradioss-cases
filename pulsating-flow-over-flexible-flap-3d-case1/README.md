@@ -41,7 +41,7 @@ The simulation completes, and the results are as follows:
 
 <img width="1920" height="1080" alt="1_Set-up-2and5secs-1" src="https://github.com/user-attachments/assets/7e4a5dc1-ab3d-4dd6-8717-9cb1baa18a57" />
 <img width="1920" height="1080" alt="2_Set-up-2and5secs-2" src="https://github.com/user-attachments/assets/44b8482e-d1d2-4d97-82dc-c1a5eadfe597" />
-<img width="1920" height="1080" alt="3_Set-up-2and5secs-3" src="https://github.com/user-attachments/assets/8b5f3203-960f-47cf-81f8-fb92a0ca3bb9" />
+<img width="1920" height="1080" alt="3_Set-up-2and5secs-3" src="https://github.com/user-attachments/assets/aeb9b4ea-9db9-44e8-8a1a-c103f90cfd9f" />
 
 #### Cross-section of the computational domain at `z= 0 m` and `t= 2.5s`
 
@@ -61,5 +61,6 @@ Central WatchPoint
 Left WatchPoint
 
 ![watchpoint_Left](https://github.com/user-attachments/assets/af9a918b-7451-4f9a-b67f-6a5b09005258)
+
 
 
