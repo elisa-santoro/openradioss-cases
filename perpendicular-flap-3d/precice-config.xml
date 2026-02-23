@@ -27,16 +27,12 @@
     <receive-mesh name="Solid-Mesh" from="Solid" />
     <write-data name="FORCES" mesh="Fluid-Mesh" />
     <read-data name="DISPLACEMENTS" mesh="Fluid-Mesh" />
-    <mapping:nearest-neighbor 
-     direction="write"
-     from="Fluid-Mesh"
-     to="Solid-Mesh" 
-     constraint="conservative" />
-    <mapping:nearest-neighbor 
-     direction="read"
-     from="Solid-Mesh"
-     to="Fluid-Mesh"
-     constraint="consistent" />
+    <mapping:rbf direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative">
+      <basis-function:compact-polynomial-c6 support-radius="0.05" />
+    </mapping:rbf>
+    <mapping:rbf direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent">
+      <basis-function:compact-polynomial-c6 support-radius="0.05" />
+    </mapping:rbf>
     <export:vtu directory="precice-exports" every-n-time-windows="500" />
   </participant>
 
@@ -50,11 +46,11 @@
 
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
 
-  <coupling-scheme:serial-explicit>
+  <coupling-scheme:parallel-explicit>
     <time-window-size value="1e-4" />
     <max-time value="5.0" />
     <participants first="Fluid" second="Solid" />
     <exchange data="FORCES" mesh="Solid-Mesh" from="Fluid" to="Solid" />
     <exchange data="DISPLACEMENTS" mesh="Solid-Mesh" from="Solid" to="Fluid" />
-  </coupling-scheme:serial-explicit>
+  </coupling-scheme:parallel-explicit>
 </precice-configuration>
