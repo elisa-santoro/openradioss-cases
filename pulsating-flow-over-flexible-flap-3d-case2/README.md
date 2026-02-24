@@ -3,6 +3,8 @@
 This is a variant of the "Pulsating flow over flexible flap" test case discussed in the [OpenFOAM adapter validation paper](https://journal.openfoam.com/index.php/ofj/article/view/88/78) where the `Solid`
 participant is modelled in OpenRadioss.
 
+Additionally, the OpenFOAM adapter validation paper originally aimed to validate an OpenFOAM - deal.II multiphysics coupling scenario by recreating the `pulsating flow over a bending flexible flap` monolithic simulation presented in the [Monolithic cut finite element–based approaches for fluid-structure interaction](https://onlinelibrary.wiley.com/doi/10.1002/nme.6072) paper; in this repository the `Solid` participant configured for the coupling has been replaced by an OpenRadioss comparable one.
+
 Given the current restrictions presented when interfacing OpenRadioss (an explicit solver) to the preCICE coupling library, the `coupling-scheme` choice implemented in this repository 
 fell on a `parallel-explicit` configuration over the `parallel-implicit` scheme implemented in the paper mentioned above. 
 
@@ -63,3 +65,4 @@ Central WatchPoint
 Left WatchPoint
 
 ![Watchpoint-Left](https://github.com/user-attachments/assets/f978e284-27e9-4ef1-8f43-f677bff3336f)
+
