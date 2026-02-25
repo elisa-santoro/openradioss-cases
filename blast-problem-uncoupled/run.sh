@@ -4,10 +4,8 @@ set -e -u
 . ../tools/log.sh
 exec > >(tee --append "$LOGFILE") 2>&1
 
-restore0Dir
-
 blockMesh
-
+cp -r 0.orig 0
 setFields
 
 ../tools/run-openfoam.sh "$@"
