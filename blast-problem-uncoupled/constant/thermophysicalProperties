@@ -1,0 +1,41 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            hePsiThermo;
+    mixture         pureMixture;
+    transport       const; // can also be 'sutherland'
+    thermo          eConst; // can also be 'hConst'
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy; // can also be 'sensibleEnthalpy'
+}
+
+mixture
+{
+    specie
+    {
+        molWeight   28.9;
+    }
+    thermodynamics
+    {
+        Cv          712; // 'Cp is defined instead if you use sensibleEnthalphy'
+        Hf          0;
+    }
+    transport
+    {
+        mu          1.8e-05;
+        Pr          0.7;
+        // 'As' and 'Ts' are defined within a 'sensibleEnthalpy' model
+    }
+}
+
+
+// ************************************************************************* //

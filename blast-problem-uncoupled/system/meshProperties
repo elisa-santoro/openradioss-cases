@@ -1,0 +1,28 @@
+// system/meshProperties
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Resolution Factor for all dimensions
+resolution_factor 4; 
+
+// Block 1 Cells Number
+block1_x #eval "74 * $resolution_factor";
+block1_y #eval "40 * $resolution_factor";
+
+// Block 2 Cells Number
+block2_x #eval "74 * $resolution_factor";
+block2_y #eval "20 * $resolution_factor";
+
+// Block 3 Cells Number
+block3_x #eval "3 * $resolution_factor";
+block3_y #eval "20 * $resolution_factor";
+
+// Block 4 Cells Number
+block4_x #eval "23 * $resolution_factor";
+block4_y #eval "20 * $resolution_factor";
+
+// Block 5 Cells Number
+block5_x #eval "23 * $resolution_factor";
+block5_y #eval "40 * $resolution_factor";
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
