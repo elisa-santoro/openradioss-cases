@@ -1,0 +1,141 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+
+| =========                 |                                                 |
+
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+
+|  \\    /   O peration     | Version:  v2406                                 |
+
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+
+|    \\/     M anipulation  |                                                 |
+
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+
+{
+
+    version     2.0;
+
+    format      ascii;
+
+    class       dictionary;
+
+    object      fvSolution;
+
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+
+solvers // Section which defines the equation solvers, tollerances and algorithms
+
+{
+
+    "(p|rho)"
+
+    {
+
+        solver          PCG;
+
+        preconditioner  DIC;
+
+        tolerance       1e-7;
+
+        relTol          0;
+
+    }
+
+
+
+    "(p|rho)Final"
+
+    {
+
+        $p;
+
+        relTol          0;
+
+    }
+
+
+
+    "(U|e)"
+
+    {
+
+        solver          PBiCGStab;
+
+        preconditioner  DILU;
+
+        tolerance       1e-7;
+
+        relTol          0;
+
+    }
+
+
+
+    "(U|e)Final"
+
+    {
+
+        $U;
+
+        relTol          0;
+
+    }
+
+}
+
+
+
+PIMPLE
+
+{
+
+    momentumPredictor yes;
+
+    nOuterCorrectors 4;
+
+    nCorrectors     2;
+
+    nNonOrthogonalCorrectors 0;
+
+
+
+    pMin      90000;
+
+    pMax      170000;
+
+}
+
+
+
+relaxationFactors
+
+{
+
+    equations
+
+    {
+
+        p         0.9;      // highly stabilizing for shock pressure jumps
+
+        rho       0.9;      // density tightly coupled to p
+
+        U         0.9;      // velocity sees steep gradients: slightly relaxed
+
+        e         0.9;      // energy drives shock strength: stabilizing
+
+    }
+
+}
+
+
+
+
+
+// ************************************************************************* //
