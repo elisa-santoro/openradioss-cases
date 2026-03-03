@@ -24,8 +24,8 @@ regions
 
         fieldValues
         (
-            volScalarFieldValue p 150000
-            volScalarFieldValue T 336
+            volScalarFieldValue p 600000
+            volScalarFieldValue T 580
         );
     }
 );
