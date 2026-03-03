@@ -1,9 +1,9 @@
 /RUN/solid-openradioss/1/
-0.02  
+0.03  
 /VERS/2024
 
 /ANIM/DT
-0.0 0.002
+0.0 0.001
 /ANIM/VECT/VEL
 /ANIM/VECT/DISP
 /ANIM/VECT/CONT
