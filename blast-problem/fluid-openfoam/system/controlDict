@@ -33,7 +33,7 @@ writeCompression off;
 
 timeFormat      general;
 
-timePrecision   8;
+timePrecision   6;
 
 functions
 {
