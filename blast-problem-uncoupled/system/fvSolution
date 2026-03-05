@@ -8,7 +8,6 @@ FoamFile
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 solvers // Section which defines the equation solvers, tollerances and algorithms
 {
-    "(p|rho)"
     "(p|rho|pcorr)"
     {
         solver          PCG;
@@ -16,7 +15,6 @@ solvers // Section which defines the equation solvers, tollerances and algorithm
         tolerance       1e-7;
         relTol          0;
     }
-    "(p|rho)Final"
 
     "(p|rho|pcorr)Final"
     {
