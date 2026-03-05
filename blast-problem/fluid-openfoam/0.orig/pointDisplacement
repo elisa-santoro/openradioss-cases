@@ -24,13 +24,7 @@ boundaryField
         value           uniform (0 0 0);
     }
 
-    interface
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
-    
-    upperWall
+    topWall
     {
         type            fixedValue;
         value           uniform (0 0 0);
@@ -41,11 +35,18 @@ boundaryField
         type            fixedValue;
         value           uniform (0 0 0);
     }
+    
+    interface
+    {
+        type            fixedValue;
+        value           $internalField;
+    }
 
     front
     {
         type            symmetryPlane;
     }
+
     back
     {
         type            symmetryPlane;
