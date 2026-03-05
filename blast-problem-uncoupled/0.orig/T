@@ -13,20 +13,43 @@ internalField   uniform 300;
 
 boundaryField
 {
-    outerContour
+    leftWall
     {
         type            fixedValue;
         value           uniform 300;
     }
 
-    structureWall
+    rightWall
+    {
+        type            fixedValue;
+        value           uniform 300;
+    }
+
+    topWall
+    {
+        type            fixedValue;
+        value           uniform 300;
+    }
+
+    lowerWall
+    {
+        type            fixedValue;
+        value           uniform 300;
+    }
+
+    interface
     {
         type            fixedValue;
         value           uniform 300;
     }
     
-    frontAndBack
+    front
     {
-        type            empty;
+        type            symmetryPlane;
+    }
+
+    back
+    {
+        type            symmetryPlane;
     }
 }
