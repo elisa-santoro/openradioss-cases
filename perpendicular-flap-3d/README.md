@@ -31,4 +31,5 @@ The simulation completes (currently configured to run up to t=5s), and it is pos
 Since the counter-coupling of displacements from the `Solid` to the `Fluid` participant also seem to be successful, it is possible to see that the `Fluid-Mesh` moves as well accordingly to the solid flap deflection.
 
 <img width="3840" height="2160" alt="Screenshot (277)" src="https://github.com/user-attachments/assets/65088696-b442-4f3b-b928-cedda47c6d37" />
+<img width="3840" height="2160" alt="Screenshot (261)" src="https://github.com/user-attachments/assets/0bb80fec-4f66-448a-b420-df2eb1f03b06" />
 
