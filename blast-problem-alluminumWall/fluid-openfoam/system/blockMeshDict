@@ -69,23 +69,23 @@ vertices
 
  
 // Block 1 Cells Number
-block1_x 296;
-block1_y 160;
+block1_x 148;
+block1_y 80;
 
 // Block 2 Cells Number
-block2_x 296;
-block2_y 80;
+block2_x 148;
+block2_y 40;
 
 // Block 3 Cells Number
 block3_x 3; // Block 3 discretizes what's considered a single cell in 3
-block3_y 80;
+block3_y 40;
 
 // Block 4 Cells Number
-block4_x 101;
-block4_y 80;
+block4_x 51;
+block4_y 40;
 
 // Block 5 Cells Number
-block5_x 101;
+block5_x 51;
 block5_y 80;
 
 // Z-Direction Cells Numbers
