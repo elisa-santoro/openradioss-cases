@@ -12,9 +12,9 @@ scale               1;
 // Dimensions: 
 // Block 1: 7.4 (x) by 4m (y)
 // Block 2: 7.4 (x) by 2m (y) - Starting from y = 4m
-// Block 3: 0.025 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
-// Block 4: 2.575 (x) by 2m (y) - Starting from x = 7.425m and y = 4 m
-// Block 5: 2.575 (x) by 4m (y) - Starting from x = 7.425m
+// Block 3: 0.02 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
+// Block 4: 2.58 (x) by 2m (y) - Starting from x = 7.42m and y = 4 m
+// Block 5: 2.58 (x) by 4m (y) - Starting from x = 7.42m
 
 vertices
 (
@@ -24,72 +24,72 @@ vertices
     (7.4 4 0)       // 2
     (0 4 0)         // 3
 
-    // Block 1: Upper Face (z = 0.25)
-    (0 0 0.25)      // 4
-    (7.4 0 0.25)    // 5
-    (7.4 4 0.25)    // 6
-    (0 4 0.25)      // 7
+    // Block 1: Upper Face (z = 0.2)
+    (0 0 0.2)      // 4
+    (7.4 0 0.2)    // 5
+    (7.4 4 0.2)    // 6
+    (0 4 0.2)      // 7
 
     // Block 2: Lower Face Missing Vertexes (z = 0)
     (0 6 0)        // 8
     (7.4 6 0)      // 9
 
-    // Block 2: Upper Face Missing Vertexes (z = 0.25)
-    (0 6 0.25)      // 10
-    (7.4 6 0.25)    // 11
+    // Block 2: Upper Face Missing Vertexes (z = 0.2)
+    (0 6 0.2)      // 10
+    (7.4 6 0.2)    // 11
 
     // Block 3: Lower Face Missing Vertexes (z = 0)
-    (7.425 4 0)      // 12
-    (7.425 6 0)      // 13
+    (7.42 4 0)      // 12
+    (7.42 6 0)      // 13
 
-    // Block 3: Upper Face Missing Vertexes (z = 0.25)
-    (7.425 4 0.25)    // 14
-    (7.425 6 0.25)    // 15
+    // Block 3: Upper Face Missing Vertexes (z = 0.2)
+    (7.42 4 0.2)    // 14
+    (7.42 6 0.2)    // 15
 
     // Block 4: Lower Face Missing Vertexes (z = 0)
     (10 4 0)       // 16
     (10 6 0)       // 17
 
-    // Block 4: Upper Face Missing Vertexes (z = 0.25)
-    (10 4 0.25)     // 18
-    (10 6 0.25)     // 19
+    // Block 4: Upper Face Missing Vertexes (z = 0.2)
+    (10 4 0.2)     // 18
+    (10 6 0.2)     // 19
 
     // Block 5: Lower Face Missing Vertexes (z = 0)
     (10 0 0)       // 20
-    (7.425 0 0)      // 21
+    (7.42 0 0)      // 21
 
-    // Block 5: Upper Face Missing Vertexes (z = 0.25)
-    (10 0 0.25)     // 22
-    (7.425 0 0.25)    // 23
+    // Block 5: Upper Face Missing Vertexes (z = 0.2)
+    (10 0 0.2)     // 22
+    (7.42 0 0.2)    // 23
 
 );
 
 
-// Default Cell Dimension: 0.025 x 0.025.
+// Default Cell Dimension: 0.05 x 0.05.
 
  
 // Block 1 Cells Number
-block1_x 296;
-block1_y 160;
+block1_x 148;
+block1_y 80;
 
 // Block 2 Cells Number
-block2_x 296;
-block2_y 80;
+block2_x 148;
+block2_y 40;
 
 // Block 3 Cells Number
 block3_x 3; // Block 3 discretizes what's considered a single cell in 3
-block3_y 80;
+block3_y 40;
 
 // Block 4 Cells Number
-block4_x 103;
-block4_y 80;
+block4_x 52;
+block4_y 40;
 
 // Block 5 Cells Number
-block5_x 103;
-block5_y 80;
+block5_x 52;
+block5_y 40;
 
 // Z-Direction Cells Numbers
-block_Z 4;
+block_Z 3;
 
 blocks
 (
