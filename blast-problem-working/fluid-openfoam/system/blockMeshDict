@@ -65,22 +65,22 @@ vertices
 );
 
 
-// Default Cell Dimension: 0.15 x 0.15 x 0.067.
+// Default Cell Dimension: 0.1 x 0.1 x 0.067.
  
-block1_x 50;
-block1_y 30;
+block1_x 74;
+block1_y 40;
 
-block2_x 50;
-block2_y 15;
+block2_x 74;
+block2_y 20;
 
 block3_x 3;
-block3_y 15;
+block3_y 20;
 
-block4_x 16;
-block4_y 15;
+block4_x 23;
+block4_y 20;
 
-block5_x 16;
-block5_y 30;
+block5_x 23;
+block5_y 40;
 
 block_z 3; // To make the coupling 3D
 
