@@ -1,10 +1,3 @@
-/*--------------------------------*- C++ -*----------------------------------*\
-| =========                 |                                                 |
-| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  v2406                                 |
-|   \\  /    A nd           | Website:  www.openfoam.com                      |
-|    \\/     M anipulation  |                                                 |
-\*---------------------------------------------------------------------------*/
 FoamFile
 {
     version     2.0;
@@ -27,6 +20,9 @@ gradSchemes
     grad(p)         cellMDLimited leastSquares 1;
     grad(e)         cellMDLimited leastSquares 1;
     grad(K)         cellMDLimited leastSquares 1;
+    grad(pcorr)     cellMDLimited leastSquares 1;
+
+    grad(cellDisplacement) cellMDLimited leastSquares 1;
 }
 
 divSchemes
@@ -38,6 +34,8 @@ divSchemes
     div(phi,e)      Gauss limitedLinear 1;
     div(phi,K)      Gauss limitedLinear 1;
     div(phiv,p)     Gauss limitedLinear 1;
+
+    div(meshPhi,p)  Gauss limitedLinear 1;
 
     div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
 }
