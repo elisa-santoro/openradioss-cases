@@ -1,0 +1,36 @@
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    volScalarFieldValue p 101325
+    volScalarFieldValue T 300
+);
+
+regions
+(
+    boxToCell
+    {
+        min (0 0 0); // Minimun corner coordinates
+        // Define the maximum corner (x_max y_max z_max)
+        max (2 6 0.1);  // Example coordinates
+
+        fieldValues
+        (
+            volScalarFieldValue p 150000
+            volScalarFieldValue T 336
+        );
+    }
+);
+
+
+
+
+// ************************************************************************* //
