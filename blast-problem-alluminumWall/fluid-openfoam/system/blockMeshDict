@@ -12,9 +12,9 @@ scale               1;
 // Dimensions: 
 // Block 1: 7.4 (x) by 4m (y)
 // Block 2: 7.4 (x) by 2m (y) - Starting from y = 4m
-// Block 3: 0.3 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
-// Block 4: 2.435 (x) by 2m (y) - Starting from x = 7.565m and y = 4 m
-// Block 5: 2.435 (x) by 4m (y) - Starting from x = 7.565m
+// Block 3: 0.15 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
+// Block 4: 2.4 (x) by 2m (y) - Starting from x = 7.55m and y = 4 m
+// Block 5: 2.4 (x) by 4m (y) - Starting from x = 7.55m
 
 vertices
 (
@@ -39,12 +39,12 @@ vertices
     (7.4 6 0.2)    // 11
 
     // Block 3: Lower Face Missing Vertexes (z = 0)
-    (7.565 4 0)      // 12
-    (7.565 6 0)      // 13
+    (7.55 4 0)      // 12
+    (7.55 6 0)      // 13
 
     // Block 3: Upper Face Missing Vertexes (z = 0.1)
-    (7.565 4 0.2)    // 14
-    (7.565 6 0.2)    // 15
+    (7.55 4 0.2)    // 14
+    (7.55 6 0.2)    // 15
 
     // Block 4: Lower Face Missing Vertexes (z = 0)
     (10 4 0)       // 16
@@ -56,31 +56,31 @@ vertices
 
     // Block 5: Lower Face Missing Vertexes (z = 0)
     (10 0 0)       // 20
-    (7.565 0 0)      // 21
+    (7.55 0 0)      // 21
 
     // Block 5: Upper Face Missing Vertexes (z = 0.1)
     (10 0 0.2)     // 22
-    (7.565 0 0.2)    // 23
+    (7.55 0 0.2)    // 23
 
 );
 
 
 // Default Cell Dimension: 0.1 x 0.1 x 0.067.
  
-block1_x 74;
-block1_y 40;
+block1_x 148;
+block1_y 80;
 
-block2_x 74;
-block2_y 20;
+block2_x 148;
+block2_y 40;
 
 block3_x 3;
-block3_y 20;
+block3_y 40;
 
-block4_x 25;
-block4_y 20;
+block4_x 49;
+block4_y 40;
 
-block5_x 25;
-block5_y 40;
+block5_x 49;
+block5_y 80;
 
 block_z 3; // To make the coupling 3D
 
