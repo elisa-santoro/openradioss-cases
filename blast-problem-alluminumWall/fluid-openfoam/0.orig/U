@@ -25,13 +25,13 @@ boundaryField
         value           uniform (0 0 0);
     }
 
-    topWall
+    lowerWall
     {
         type            fixedValue;
         value           uniform (0 0 0);
     }
 
-    lowerWall
+    upperWall
     {
         type            fixedValue;
         value           uniform (0 0 0);
@@ -55,3 +55,4 @@ boundaryField
 }
 
 // ************************************************************************* //
+

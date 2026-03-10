@@ -37,12 +37,12 @@
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
     <export:vtu directory="precice-exports" every-n-time-windows="1000" />
-    <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z0" coordinate="7.4;4.0;0.0" />
+<watch-point mesh="Solid-Mesh" name="Plate-Tip-Z0" coordinate="7.4;4.0;0.0" />
     <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z01" coordinate="7.4;4.0;0.1" />
-    <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z025" coordinate="7.4;4.0;0.25" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z025" coordinate="7.4;4.0;0.2" />
     <watch-point mesh="Solid-Mesh" name="Plate-Side-Z0" coordinate="7.4;2.0;0.0" />
     <watch-point mesh="Solid-Mesh" name="Plate-Side-Z01" coordinate="7.4;2.0;0.1" />
-    <watch-point mesh="Solid-Mesh" name="Plate-Side-Z025" coordinate="7.4;2.0;0.25" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Side-Z025" coordinate="7.4;2.0;0.2" />
   </participant>
 
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />

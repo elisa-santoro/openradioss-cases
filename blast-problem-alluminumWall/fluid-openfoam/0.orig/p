@@ -23,16 +23,16 @@ boundaryField
         type            zeroGradient;
     }
 
-    topWall
-    {
-        type            zeroGradient;
-    }
-
     lowerWall
     {
         type            zeroGradient;
     }
-    
+
+    upperWall
+    {
+        type            zeroGradient;
+    }
+
     interface
     {
         type            zeroGradient;
@@ -42,7 +42,7 @@ boundaryField
     {
         type            symmetryPlane;
     }
-
+    
     back
     {
         type            symmetryPlane;

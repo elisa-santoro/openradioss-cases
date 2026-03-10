@@ -20,12 +20,12 @@ regions
     {
         min (0 0 0); // Minimun corner coordinates
         // Define the maximum corner (x_max y_max z_max)
-        max (2 6 0.15);  // Example coordinates
+        max (2 6 0.2);  // Example coordinates
 
         fieldValues
         (
-            volScalarFieldValue p 600000
-            volScalarFieldValue T 580
+            volScalarFieldValue p 300000
+            volScalarFieldValue T 425
         );
     }
 );
