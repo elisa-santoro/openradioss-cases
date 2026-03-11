@@ -29,14 +29,14 @@
     <read-data name="DISPLACEMENTS" mesh="Fluid-Mesh" />
     <mapping:nearest-neighbor direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative"/>
     <mapping:nearest-neighbor direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent"/>
-    <export:vtu directory="precice-exports" every-n-time-windows="1000" />
+    <export:vtu directory="precice-exports" every-n-time-windows="2000" />
   </participant>
 
   <participant name="Solid">
     <provide-mesh name="Solid-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
-    <export:vtu directory="precice-exports" every-n-time-windows="1000" />
+    <export:vtu directory="precice-exports" every-n-time-windows="2000" />
     <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z0" coordinate="7.4;4.0;0.0" />
     <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z01" coordinate="7.4;4.0;0.1" />
     <watch-point mesh="Solid-Mesh" name="Plate-Tip-Z02" coordinate="7.4;4.0;0.2" />
@@ -48,7 +48,7 @@
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
 
   <coupling-scheme:parallel-explicit>
-    <time-window-size value="1e-6" />
+    <time-window-size value="5e-7" />
     <max-time value="0.03" />
     <participants first="Fluid" second="Solid" />
     <exchange data="FORCES" mesh="Solid-Mesh" from="Fluid" to="Solid" />
