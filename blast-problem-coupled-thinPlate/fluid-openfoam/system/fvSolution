@@ -60,7 +60,7 @@ PIMPLE
     nCorrectors     2;
     nNonOrthogonalCorrectors 0;
     pMin      90000;
-    pMax      170000;
+    pMax      250000;
 }
 
 relaxationFactors

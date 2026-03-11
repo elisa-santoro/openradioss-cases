@@ -12,9 +12,9 @@ scale               1;
 // Dimensions: 
 // Block 1: 7.4 (x) by 4m (y)
 // Block 2: 7.4 (x) by 2m (y) - Starting from y = 4m
-// Block 3: 0.02 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
-// Block 4: 2.58 (x) by 2m (y) - Starting from x = 7.42m and y = 4 m
-// Block 5: 2.58 (x) by 4m (y) - Starting from x = 7.42m
+// Block 3: 0.05 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
+// Block 4: 2.55 (x) by 2m (y) - Starting from x = 7.45m and y = 4 m
+// Block 5: 2.55 (x) by 4m (y) - Starting from x = 7.45m
 
 vertices
 (
@@ -39,12 +39,12 @@ vertices
     (7.4 6 0.2)    // 11
 
     // Block 3: Lower Face Missing Vertexes (z = 0)
-    (7.42 4 0)      // 12
-    (7.42 6 0)      // 13
+    (7.45 4 0)      // 12
+    (7.45 6 0)      // 13
 
     // Block 3: Upper Face Missing Vertexes (z = 0.2)
-    (7.42 4 0.2)    // 14
-    (7.42 6 0.2)    // 15
+    (7.45 4 0.2)    // 14
+    (7.45 6 0.2)    // 15
 
     // Block 4: Lower Face Missing Vertexes (z = 0)
     (10 4 0)       // 16
@@ -56,36 +56,36 @@ vertices
 
     // Block 5: Lower Face Missing Vertexes (z = 0)
     (10 0 0)       // 20
-    (7.42 0 0)      // 21
+    (7.45 0 0)      // 21
 
     // Block 5: Upper Face Missing Vertexes (z = 0.2)
     (10 0 0.2)     // 22
-    (7.42 0 0.2)    // 23
+    (7.45 0 0.2)    // 23
 
 );
 
 
-// Default Cell Dimension: 0.05 x 0.05.
+// Default Cell Dimension: 0.1 x 0.1.
 
  
 // Block 1 Cells Number
-block1_x 148;
-block1_y 80;
+block1_x 74;
+block1_y 40;
 
 // Block 2 Cells Number
-block2_x 148;
-block2_y 40;
+block2_x 74;
+block2_y 20;
 
 // Block 3 Cells Number
 block3_x 3; // Block 3 discretizes what's considered a single cell in 3
-block3_y 40;
+block3_y 20;
 
 // Block 4 Cells Number
-block4_x 52;
-block4_y 40;
+block4_x 26;
+block4_y 20;
 
 // Block 5 Cells Number
-block5_x 52;
+block5_x 26;
 block5_y 40;
 
 // Z-Direction Cells Numbers
