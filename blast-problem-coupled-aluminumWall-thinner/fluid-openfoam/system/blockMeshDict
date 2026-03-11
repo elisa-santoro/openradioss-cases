@@ -24,7 +24,7 @@ vertices
     (7.4 4 0)       // 2
     (0 4 0)         // 3
 
-    // Block 1: Upper Face (z = 0.1)
+    // Block 1: Upper Face (z = 0.2)
     (0 0 0.2)      // 4
     (7.4 0 0.2)    // 5
     (7.4 4 0.2)    // 6
@@ -34,7 +34,7 @@ vertices
     (0 6 0)        // 8
     (7.4 6 0)      // 9
 
-    // Block 2: Upper Face Missing Vertexes (z = 0.1)
+    // Block 2: Upper Face Missing Vertexes (z = 0.2)
     (0 6 0.2)      // 10
     (7.4 6 0.2)    // 11
 
@@ -42,7 +42,7 @@ vertices
     (7.5 4 0)      // 12
     (7.5 6 0)      // 13
 
-    // Block 3: Upper Face Missing Vertexes (z = 0.1)
+    // Block 3: Upper Face Missing Vertexes (z = 0.2)
     (7.5 4 0.2)    // 14
     (7.5 6 0.2)    // 15
 
@@ -50,7 +50,7 @@ vertices
     (10 4 0)       // 16
     (10 6 0)       // 17
 
-    // Block 4: Upper Face Missing Vertexes (z = 0.1)
+    // Block 4: Upper Face Missing Vertexes (z = 0.2)
     (10 4 0.2)     // 18
     (10 6 0.2)     // 19
 
@@ -58,29 +58,29 @@ vertices
     (10 0 0)       // 20
     (7.5 0 0)      // 21
 
-    // Block 5: Upper Face Missing Vertexes (z = 0.1)
+    // Block 5: Upper Face Missing Vertexes (z = 0.2)
     (10 0 0.2)     // 22
     (7.5 0 0.2)    // 23
 
 );
 
 
-// Default Cell Dimension: 0.1 x 0.1 x 0.067.
+// Default Cell Dimension: 0.05 x 0.05 x 0.067.
  
-block1_x 74;
-block1_y 40;
+block1_x 148;
+block1_y 80;
 
-block2_x 74;
-block2_y 20;
+block2_x 148;
+block2_y 80;
 
 block3_x 3;
-block3_y 20;
+block3_y 40;
 
-block4_x 25;
-block4_y 20;
+block4_x 50;
+block4_y 40;
 
-block5_x 25;
-block5_y 40;
+block5_x 50;
+block5_y 80;
 
 block_z 3; // To make the coupling 3D
 
