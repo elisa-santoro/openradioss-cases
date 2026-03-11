@@ -29,14 +29,14 @@
     <read-data name="DISPLACEMENTS" mesh="Fluid-Mesh" />
     <mapping:nearest-neighbor direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative"/>
     <mapping:nearest-neighbor direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent"/>
-    <export:vtu directory="precice-exports" every-n-time-windows="1000" />
+    <export:vtu directory="precice-exports" every-n-time-windows="100" />
   </participant>
 
   <participant name="Solid">
     <provide-mesh name="Solid-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
-    <export:vtu directory="precice-exports" every-n-time-windows="1000" />
+    <export:vtu directory="precice-exports" every-n-time-windows="100" />
     <watch-point mesh="Solid-Mesh" name="Plate-Tip" coordinate="7.4;4.0;0.0" />
     <watch-point mesh="Solid-Mesh" name="Plate-Side-Halfway" coordinate="7.4;2.0;0.0" />
   </participant>
