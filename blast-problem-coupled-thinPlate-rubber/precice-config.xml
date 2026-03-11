@@ -29,22 +29,73 @@
     <read-data name="DISPLACEMENTS" mesh="Fluid-Mesh" />
     <mapping:nearest-neighbor direction="write" from="Fluid-Mesh" to="Solid-Mesh" constraint="conservative"/>
     <mapping:nearest-neighbor direction="read" from="Solid-Mesh" to="Fluid-Mesh" constraint="consistent"/>
-    <export:vtu directory="precice-exports" every-n-time-windows="100" />
+    <export:vtu directory="precice-exports" every-n-time-windows="1000" />
   </participant>
 
   <participant name="Solid">
     <provide-mesh name="Solid-Mesh" />
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
-    <export:vtu directory="precice-exports" every-n-time-windows="100" />
-    <watch-point mesh="Solid-Mesh" name="Plate-Tip" coordinate="7.4;4.0;0.0" />
-    <watch-point mesh="Solid-Mesh" name="Plate-Side-Halfway" coordinate="7.4;2.0;0.0" />
+    <export:vtu directory="precice-exports" every-n-time-windows="1000" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y4-Z0" coordinate="7.4;4.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y3n5-Z0" coordinate="7.4;3.5;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y3-Z0" coordinate="7.4;3.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y2n5-Z0" coordinate="7.4;2.5;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y2-Z0" coordinate="7.4;2.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y1n5-Z0" coordinate="7.4;1.5;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y1-Z0" coordinate="7.4;1.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y0n5-Z0" coordinate="7.4;0.5;0.0" />
+    <!-- -->
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y4-Z01" coordinate="7.4;4.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y3n5-Z01" coordinate="7.4;3.5;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y3-Z01" coordinate="7.4;3.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y2n5-Z01" coordinate="7.4;2.5;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y2-Z01" coordinate="7.4;2.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y1n5-Z01" coordinate="7.4;1.5;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y1-Z01" coordinate="7.4;1.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y0n5-Z01" coordinate="7.4;0.5;0.1" />
+    <!-- -->
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y4-Z02" coordinate="7.4;4.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y3n5-Z02" coordinate="7.4;3.5;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y3-Z02" coordinate="7.4;3.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y2n5-Z02" coordinate="7.4;2.5;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y2-Z02" coordinate="7.4;2.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y1n5-Z02" coordinate="7.4;1.5;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y1-Z02" coordinate="7.4;1.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Left-Y0n5-Z02" coordinate="7.4;0.5;0.2" />  
+    <!-- -->
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y4-Z0" coordinate="7.4;4.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y3n5-Z0" coordinate="7.4;3.5;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y3-Z0" coordinate="7.4;3.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y2n5-Z0" coordinate="7.4;2.5;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y2-Z0" coordinate="7.4;2.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y1n5-Z0" coordinate="7.4;1.5;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y1-Z0" coordinate="7.4;1.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y0n5-Z0" coordinate="7.4;0.5;0.0" />
+    <!-- -->
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y4-Z01" coordinate="7.4;4.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y3n5-Z01" coordinate="7.4;3.5;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y3-Z01" coordinate="7.4;3.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y2n5-Z01" coordinate="7.4;2.5;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y2-Z01" coordinate="7.4;2.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y1n5-Z01" coordinate="7.4;1.5;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y1-Z01" coordinate="7.4;1.0;0.1" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y0n5-Z01" coordinate="7.4;0.5;0.1" />
+    <!-- -->
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y4-Z02" coordinate="7.4;4.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y3n5-Z02" coordinate="7.4;3.5;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y3-Z02" coordinate="7.4;3.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y2n5-Z02" coordinate="7.4;2.5;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y2-Z02" coordinate="7.4;2.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y1n5-Z02" coordinate="7.4;1.5;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y1-Z02" coordinate="7.4;1.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Plate-Right-Y0n5-Z02" coordinate="7.4;0.5;0.2" />  
   </participant>
 
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
 
   <coupling-scheme:parallel-explicit>
-    <time-window-size value="1e-5" />
+    <time-window-size value="1e-6" />
     <max-time value="0.03" />
     <participants first="Fluid" second="Solid" />
     <exchange data="FORCES" mesh="Solid-Mesh" from="Fluid" to="Solid" />
