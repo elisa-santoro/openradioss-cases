@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -e -u
 
-. ../../tools/cleaning-tools.sh
+. ../../../tools/cleaning-tools.sh
 
 clean_openradioss .
 rm -fv solid-openradiossA* solid-openradiossT*
