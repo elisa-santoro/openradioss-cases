@@ -82,7 +82,7 @@ block4_y 80;
 block5_x 100;
 block5_y 160;
 
-block_z 3; // To make the coupling 3D
+block_z 1; // To make the coupling 3D
 
 blocks
 (
