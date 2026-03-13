@@ -9,7 +9,7 @@ FoamFile
 
 ddtSchemes
 {
-    default         CrankNicolson 1;
+    default         backward;
 }
 
 gradSchemes
