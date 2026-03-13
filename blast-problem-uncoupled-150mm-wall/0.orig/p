@@ -13,19 +13,39 @@ internalField   uniform 101325;
 
 boundaryField
 {
-    outerContour
+    leftWall
     {
         type            zeroGradient;
     }
 
-    structureWall
+    rightWall
     {
         type            zeroGradient;
     }
 
-    frontAndBack
+    lowerWall
     {
-        type            empty;
+        type            zeroGradient;
+    }
+
+    upperWall
+    {
+        type            zeroGradient;
+    }
+
+    interface
+    {
+        type            zeroGradient;
+    }
+
+    front
+    {
+        type            symmetryPlane;
+    }
+    
+    back
+    {
+        type            symmetryPlane;
     }
 }
 

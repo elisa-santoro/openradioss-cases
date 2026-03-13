@@ -13,8 +13,8 @@ scale               1;
 // Block 1: 7.4 (x) by 4m (y)
 // Block 2: 7.4 (x) by 2m (y) - Starting from y = 4m
 // Block 3: 0.15 (x) by 2m (y) - Starting from x = 7.4m and y = 4m
-// Block 4: 2.45 (x) by 2m (y) - Starting from x = 7.55m and y = 4 m
-// Block 5: 2.45 (x) by 4m (y) - Starting from x = 7.55m
+// Block 4: 2.4 (x) by 2m (y) - Starting from x = 7.55m and y = 4 m
+// Block 5: 2.4 (x) by 4m (y) - Starting from x = 7.55m
 
 vertices
 (
@@ -25,47 +25,47 @@ vertices
     (0 4 0)         // 3
 
     // Block 1: Upper Face (z = 0.1)
-    (0 0 0.1)      // 4
-    (7.4 0 0.1)    // 5
-    (7.4 4 0.1)    // 6
-    (0 4 0.1)      // 7
+    (0 0 0.2)      // 4
+    (7.4 0 0.2)    // 5
+    (7.4 4 0.2)    // 6
+    (0 4 0.2)      // 7
 
     // Block 2: Lower Face Missing Vertexes (z = 0)
     (0 6 0)        // 8
     (7.4 6 0)      // 9
 
     // Block 2: Upper Face Missing Vertexes (z = 0.1)
-    (0 6 0.1)      // 10
-    (7.4 6 0.1)    // 11
+    (0 6 0.2)      // 10
+    (7.4 6 0.2)    // 11
 
     // Block 3: Lower Face Missing Vertexes (z = 0)
     (7.55 4 0)      // 12
     (7.55 6 0)      // 13
 
     // Block 3: Upper Face Missing Vertexes (z = 0.1)
-    (7.55 4 0.1)    // 14
-    (7.55 6 0.1)    // 15
+    (7.55 4 0.2)    // 14
+    (7.55 6 0.2)    // 15
 
     // Block 4: Lower Face Missing Vertexes (z = 0)
     (10 4 0)       // 16
     (10 6 0)       // 17
 
     // Block 4: Upper Face Missing Vertexes (z = 0.1)
-    (10 4 0.1)     // 18
-    (10 6 0.1)     // 19
+    (10 4 0.2)     // 18
+    (10 6 0.2)     // 19
 
     // Block 5: Lower Face Missing Vertexes (z = 0)
     (10 0 0)       // 20
     (7.55 0 0)      // 21
 
     // Block 5: Upper Face Missing Vertexes (z = 0.1)
-    (10 0 0.1)     // 22
-    (7.55 0 0.1)    // 23
+    (10 0 0.2)     // 22
+    (7.55 0 0.2)    // 23
 
 );
 
 
-// Default Cell Dimension: 0.025 x 0.025.
+// Default Cell Dimension: 0.025 x 0.025 x 0.067.
  
 block1_x 296;
 block1_y 160;
@@ -82,6 +82,8 @@ block4_y 80;
 block5_x 100;
 block5_y 160;
 
+block_z 3; // To make the coupling 3D
+
 blocks
 (
     // hex (v0 v1 v2 v3 v4 v5 v6 v7) (n_x n_y n_z) simpleGrading (1 1 1)
@@ -89,55 +91,76 @@ blocks
     // Block 1
 
     hex (0 1 2 3 4 5 6 7)           
-    ($block1_x $block1_y 1)                       // Number of cells in (x, y, z) directions
+    ($block1_x $block1_y $block_z)                       // Number of cells in (x, y, z) directions
     simpleGrading (1 1 1)           // Simple uniform grading
 
     // Block 2
 
     hex (3 2 9 8 7 6 11 10)
-    ($block2_x $block2_y 1)
+    ($block2_x $block2_y $block_z)
     simpleGrading (1 1 1)
 
     // Block 3
 
     hex (2 12 13 9 6 14 15 11)
-    ($block3_x $block3_y 1)
+    ($block3_x $block3_y $block_z)
     simpleGrading (1 1 1)
 
      // Block 4
 
     hex (12 16 17 13 14 18 19 15)
-    ($block4_x $block4_y 1)
+    ($block4_x $block4_y $block_z)
     simpleGrading (1 1 1)
 
     // Block 5
 
     hex (21 20 16 12 23 22 18 14)
-    ($block5_x $block5_y 1)
+    ($block5_x $block5_y $block_z)
     simpleGrading (1 1 1)
 
 );
 
 boundary               // Keyword
 (
-    outerContour       // Patch name
+    leftWall       // Patch name
+    {
+        type wall;    // patch type for patch 0
+        faces
+        (
+            (0 4 7 3)  // Left Face Block 1
+            (3 7 10 8) // Left Face Block 2
+        );
+    }
+    rightWall       // Patch name
+    {
+        type wall;    // patch type for patch 0
+        faces
+        (
+            (16 17 19 18) // Right Face Block 4
+            (20 16 18 22) // Right Face Block 5
+        );
+    }
+    lowerWall
     {
         type wall;    // patch type for patch 0
         faces
         (
             (0 1 5 4) // Bottom Face - Block 1
-            (0 4 7 3)  // Left Face Block 1
-            (3 7 10 8) // Left Face Block 2
-            (9 8 10 11) // Top Face - Block 2
-            (13 9 11 15) // Top Face - Block 3
-            (17 13 15 19) // Top Face - Block 4
-            (16 17 19 18) // Right Face Block 4
-            (20 16 18 22) // Right Face Block 5
             (20 22 23 21) // Bottom Face - Block 5
         );
     }
+    upperWall
+    {
+        type wall;    // patch type for patch 0
+        faces
+        (
+            (9 8 10 11) // Top Face - Block 2
+            (13 9 11 15) // Top Face - Block 3
+            (17 13 15 19) // Top Face - Block 4
+        );
+    }
 
-    structureWall             // patch name
+    interface             // patch name
     {
         type wall;    // patch type for patch 1
         faces
@@ -148,30 +171,48 @@ boundary               // Keyword
         );
     }
     
-    frontAndBack
+    back
     {
-        type empty;
+        type symmetryPlane;
         faces
         (
             // Block 1
             (0 3 2 1)
-            (4 5 6 7)
             
             // Block 2
             (3 8 9 2)
-            (7 6 11 10)
 
             // Block 3
             (2 9 13 12)
-            (6 14 15 11)
 
             // Block 4
             (12 13 17 16)
+
+            // Block 5
+            (12 16 20 21)
+
+        );
+    }
+
+    front
+    {
+        type symmetryPlane;
+        faces
+        (
+            // Block 1
+            (4 5 6 7)
+            
+            // Block 2
+            (7 6 11 10)
+
+            // Block 3
+            (6 14 15 11)
+
+            // Block 4
             (14 18 19 15)
 
             // Block 5
             (18 14 23 22)
-            (12 16 20 21)
         );
     }
 );

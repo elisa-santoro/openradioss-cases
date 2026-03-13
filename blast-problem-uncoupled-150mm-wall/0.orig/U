@@ -13,22 +13,46 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
-    outerContour
+    leftWall
     {
         type            fixedValue;
         value           uniform (0 0 0);
     }
 
-    structureWall
+    rightWall
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+
+    lowerWall
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+
+    upperWall
+    {
+        type            fixedValue;
+        value           uniform (0 0 0);
+    }
+
+    interface
     {
         type            fixedValue;
         value           uniform (0 0 0);
     }
     
-    frontAndBack
+    front
     {
-        type            empty;
+        type            symmetryPlane;
+    }
+
+    back
+    {
+        type            symmetryPlane;
     }
 }
 
 // ************************************************************************* //
+

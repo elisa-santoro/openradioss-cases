@@ -15,13 +15,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         0.02;
+endTime         0.03;
 
-deltaT          0.00001;
+deltaT          0.000001;
 
-writeControl    adjustableRunTime;
+writeControl    runTime;
 
-writeInterval   0.002;
+writeInterval   0.001;
 
 purgeWrite      0;
 
@@ -33,7 +33,13 @@ writeCompression off;
 
 timeFormat      general;
 
-timePrecision   6;
+timePrecision   8;
 
-runTimeModifiable true;
-
+functions
+{
+    preCICE_Adapter
+    {
+        type preciceAdapterFunctionObject;
+        libs ("libpreciceAdapterFunctionObject.so");
+    }
+}
