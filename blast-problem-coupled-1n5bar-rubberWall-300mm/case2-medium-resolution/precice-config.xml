@@ -37,17 +37,9 @@
     <write-data name="DISPLACEMENTS" mesh="Solid-Mesh" />
     <read-data name="FORCES" mesh="Solid-Mesh" />
     <export:vtu directory="precice-exports" every-n-time-windows="100" />
-    <watch-point mesh="Solid-Mesh" name="Wall-Left-Tip-Front" coordinate="7.4;4.0;0.2" />
-    <watch-point mesh="Solid-Mesh" name="Wall-Left-Halfway-Front" coordinate="7.4;2.0;0.2" />
-    <!-- -->
-    <watch-point mesh="Solid-Mesh" name="Wall-Left-Tip-Back" coordinate="7.4;4.0;0.0" />
-    <watch-point mesh="Solid-Mesh" name="Wall-Left-Halfway-Back" coordinate="7.4;2.0;0.0" />
-    <!-- -->
-    <watch-point mesh="Solid-Mesh" name="Wall-Right-Tip-Front" coordinate="7.7;4.0;0.2" />
-    <watch-point mesh="Solid-Mesh" name="Wall-Right-Halfway-Front" coordinate="7.7;2.0;0.2" />
-    <!-- -->
-    <watch-point mesh="Solid-Mesh" name="Wall-Right-Tip-Back" coordinate="7.7;4.0;0.0" />
-    <watch-point mesh="Solid-Mesh" name="Wall-Right-Halfway-Back" coordinate="7.7;2.0;0.0" />
+    <watch-point mesh="Solid-Mesh" name="Wall-Left-Tip" coordinate="7.4;4.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Wall-Left-Halfway" coordinate="7.4;2.0;0.2" />
+    <watch-point mesh="Solid-Mesh" name="Wall-Left-Bottom" coordinate="7.4;0.6;0.2" />
   </participant>
 
   <m2n:sockets acceptor="Fluid" connector="Solid" exchange-directory=".." />
