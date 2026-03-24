@@ -2,10 +2,10 @@
 set -e -u
 shopt -s expand_aliases
 
-. ../../../../tools/log.sh
+. ../../../tools/log.sh
 exec > >(tee --append "$LOGFILE") 2>&1
 
-. ../../../../tools/setup-openradioss.sh
+. ../../../tools/setup-openradioss.sh
 
 radioss_starter -i solid-openradioss_0000.rad
 
