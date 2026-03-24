@@ -3,5 +3,5 @@ set -e -u
 
 . ../../../../tools/cleaning-tools.sh
 
-clean_openfoam .
-rm -rf ./0/
+clean_openradioss .
+rm -fv solid-openradiossA* solid-openradiossT*
